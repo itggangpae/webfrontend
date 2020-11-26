@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>eval 함수</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+	<form name="form1">
+		아이디 : <input type="text" name="id" /> <input type="button"
+			value="텍스트에 출력" onclick="test()" />
+	</form>
+</body>
+
+<script>
+	function test() {
+		var form1 = eval("document.form1");
+		form1.id.value = prompt("아이디를 입력");
+	}
+</script>
+
+</html>

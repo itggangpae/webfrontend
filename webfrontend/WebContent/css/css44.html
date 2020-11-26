@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>고정 폭 2단 레이아웃</title>
+<style>
+	#wrapper{
+		width:960px;
+		
+	}
+	#main{
+		float:left;
+		width:650px;
+		margin:0 20px;
+		background-color:blue;
+	}
+	#extras{
+		float:left;
+		width:250px;
+		margin:0 20px 0 0;
+		background-color:red;
+	}
+	#header{
+		background-color:gray;
+	}
+	#footer{
+		clear:left;
+		background-color:gray;
+	}
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">Headline</div>
+		<div id="main">Main Article</div>
+		<div id="extras">Linkes And News</div>
+		<div id="footer">Copylignt Park</div>
+	</div>
+</body>
+</html>

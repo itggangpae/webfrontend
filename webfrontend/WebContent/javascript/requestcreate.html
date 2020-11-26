@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트를 이용한 Ajax</title>
+</head>
+<body>
+</body>
+<script>
+	var request;
+	if (window.XMLHttpRequest) {
+		request = new XMLHttpRequest();
+		alert("객체 생성");
+	} else if (window.ActiveXObject) {
+		request = new ActiveXObject("Microsoft.XMLHTTP");
+		alert("IE에서 지원하는 객체 생성");
+	} else {
+		alert("지원되지 않는 브라우저");
+	}
+	request.open('GET', 'data/data.txt');
+	request.send('');
+
+	request.onreadystatechange = function() {
+		if (request.readyState == 4) {
+			if (request.status >= 200 && request.status < 300) {
+				alert("데이터 가져오기 성공");
+			} else if (request.status >= 400 && request.status < 500) {
+				alert(request.status);
+			}
+		}
+	}
+</script>
+</html>

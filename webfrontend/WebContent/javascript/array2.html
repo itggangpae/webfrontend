@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열에 추가된 메소드</title>
+
+</head>
+<body>
+</body>
+<script>
+	var array = [ 1, 2, 3, 4, 5, 5, 4, 3, 2, 1 ];
+
+	var output = '';
+	var sum = 0;
+	array.forEach(function(element, index, array) {
+		sum += element;
+		output += index + ': ' + element + ' → ' + sum + '<br/>';
+	});
+	document.write(output);
+</script>
+</html>

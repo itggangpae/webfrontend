@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>keyframe 적용</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	position: relative;
+}
+#keyframe {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	-webkit-animation-name: keyany;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: normal;
+	-webkit-animation-timing-function: linear;
+}
+#keyframe>h1 {
+	line-height: 200px;
+}
+
+@-webkit-keyframes keyany {
+	from { 
+		left:0;
+		-webkit-transform: rotate(0deg);}
+	50%{
+	left:
+    	500px;	
+	}
+	to {
+		left: 500px;
+		-webkit-transform: rotate(180deg);
+	}
+}
+</style>
+</head>
+
+<body>
+	<div id="keyframe">
+		<h1>키프레임</h1>
+	</div>
+</body>
+</html>

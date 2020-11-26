@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>arrow function</title>
+<script>
+/*
+var fn = function(a){
+	console.log(a)
+}
+
+const fn = (a) => {
+  console.log(a);
+};
+*/
+
+const fn = a => {
+  console.log(a);
+};	
+
+fn("arrow");
+
+const multiply = (a, b) => a * b;
+console.log(multiply(100, 200))
+
+
+//this 와 arguments의 의미가 다름
+const name = 'ni';
+
+function school (code) {
+  return {
+    name: 'ken ' + code,
+    logName: () => {
+      console.log(this.name);
+      console.log(arguments);
+    }
+  };
+}
+
+const obj = school(378);
+obj.logName(1,2,3);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

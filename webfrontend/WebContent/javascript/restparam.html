@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정해지지 않음 매개변수 개수</title>
+<script>
+//Example #1
+function foo1 (a, b, ...c) {
+  console.log(c);                	// ["c", "d", "e", "f"]
+  console.log(Array.isArray(c)); 	// true
+}
+
+foo1('a', 'b', 'c', 'd', 'e', 'f');
+
+//"arguments" is different
+function foo2 (a, b, ...c) {
+  console.log(arguments);
+  console.log(Array.isArray(arguments));	// false
+}
+
+foo2(1, 2, 3, 4, 5);
+</script>
+</head>
+<body>
+
+</body>
+</html>

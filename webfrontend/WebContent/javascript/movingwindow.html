@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>윈도우 크기 조절</title>
+</head>
+
+<body>
+</body>
+<script>
+	var child = window.open('', '', 'width=300, height=200');
+	child.moveTo(0, 0);
+
+	// 1초마다 함수를 실행합니다.
+	setInterval(function() {
+		child.moveBy(10, 10);
+	}, 1000);
+</script>
+</html>

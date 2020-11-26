@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 화면</title>
+<style>
+span {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<form action="./joinProcess.jsp" method="post"
+		onsubmit="return check()">
+		<p align="center">
+		<table align="center" border="1" width="70%" height="50%">
+			<tr>
+				<td colspan="2" align="center"><h2>회원가입</h2></td>
+			</tr>
+
+
+			<tr>
+				<td width="17%">&nbsp;&nbsp;&nbsp;&nbsp; 이름</td>
+
+				<td>&nbsp;&nbsp;&nbsp; <input type="text" name="member_name"
+					id="member_name" size="20" /> <span id="nameSpan">이름은 한글2-5
+						자로 입력하세요</span></td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp; 이메일</td>
+				<td>&nbsp;&nbsp;&nbsp; <input type="text" name="member_email"
+					id="member_email" size="30" maxlength="30" /> <span id="emailSpan">아이디로
+						사용할 이메일 주소를 입력하세요</span></td>
+			</tr>
+			<tr>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp; 비밀번호</td>
+				<td>&nbsp;&nbsp;&nbsp; <input type="password" name="member_pw"
+					id="pw1" size="16" /> <span id="pwSpan"> </span></td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp; 비밀번호 확인</td>
+				<td>&nbsp;&nbsp;&nbsp; <input type="password" name="member_pw2"
+					id="pw2" size="16" />
+				</td>
+			</tr>
+
+			<tr>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp; 모바일</td>
+				<td>&nbsp;&nbsp;&nbsp; <input type="text" name="member_mobile"
+					id="member_mobile" size="11" maxlength="11"
+					onkeypress="return gNumCheck()" /> <span id="mobileSpan">-빼고
+						숫자만 입력하세요</span></td>
+			</tr>
+		</table>
+
+		<table align="center" width="50%">
+			<tr>
+				<td align="center"><br /> <input type="submit" value="회원가입" />
+					<input type="reset" value="작성취소" /> <input type="button"
+					value="메인으로" onclick="location.href='./index.html'" /></td>
+			</tr>
+		</table>
+		</p>
+	</form>
+</body>
+<script>
+		function check() {
+			var name = document.getElementById("member_name").value;
+			var namespan = document.getElementById("nameSpan");
+			if (name == null || name.length < 1) {
+				document.getElementById("member_name").focus();
+				namespan.innerHTML = "이름은 필수 입니다.";
+				return false;
+			} else {
+				var regName = /^[가-힣]{2,5}$/;
+				if (regName.test(name))
+					namespan.innerHTML = "";
+				else {
+					namespan.innerHTML = "이름 형식이 잘못되었습니다."
+					return false;
+				}
+			}
+			var email = document.getElementById("member_email").value;
+			var emailspan = document.getElementById("emailSpan");
+			if (email == null || email.length < 1) {
+				document.getElementById("member_email").focus();
+				emailspan.innerHTML = "이메일은 필수 입니다.";
+				return false;
+			} else {
+				var regEmail = /^\w{5,12}@[a-z]{2,10}[\.][a-z]{2,3}[\.]?[a-z]{0,2}$/;
+				if (regEmail.test(email))
+					emailspan.innerHTML = "";
+				else {
+					document.getElementById("member_email").focus();
+					document.getElementById("member_name").focus();
+					emailspan.innerHTML = "이메일 형식이 잘못되었습니다."
+					return false;
+				}
+			}
+			var pw1 = document.getElementById("pw1");
+			var pw2 = document.getElementById("pw2");
+			var pwspan = document.getElementById("pwSpan");
+			if (pw1.value != pw2.value) {
+				pwspan.innerHTML = "비밀번호 2개는 일치해야 합니다.";
+				pw1.focus();
+				return false;
+			}
+			if (pw1.value.length < 7) {
+				pwspan.innerHTML = "비밀번호는 7자리 이상으로 작성해 주세요";
+				pw1.focus();
+				return false;
+			}
+			var mobile = document.getElementById("member_mobile").value;
+			var mobilespan = document.getElementById("mobileSpan");
+			var regMobile = /^(010|011|016|017|018|019)\d{3,4}\d{4}$/;
+			;
+			if (regMobile.test(mobile))
+				mobilespan.innerHTML = "";
+			else {
+				document.getElementById("member_mobile").focus();
+				mobilespan.innerHTML = "모바일 형식이 잘못되었습니다."
+				return false;
+			}
+			return true;
+		}
+		function gNumCheck(e) {
+			event = window.event || e;
+			keyCode = window.event ? window.event.keyCode : e.which;
+
+			if (keyCode >= 48 && keyCode <= 57 || keyCode >= 96 && keyCode <= 105 || keyCode == 8 || keyCode >= 37 && keyCode <= 40) {
+				return true;
+			} else {
+
+				if (!window.event)
+					e.preventDefault();
+				else
+					event.returnValue = false;
+			}
+		}
+	</script>
+
+</html>

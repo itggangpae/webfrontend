@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transform</title>
+<style type="text/css">
+div {
+	background-color: blue;
+	width: 200px;
+	height: 60px;
+	text-align: center;
+}
+
+#div1 {
+	-webkit-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+}
+
+#div2 {
+	-webkit-transform: rotate(15deg);
+	-ms-transform: rotate(15deg);
+	-moz-transform: rotate(15deg);
+}
+
+#div3 {
+	-webkit-transform: skew(10deg, 20deg);
+	-ms-transform: skew(10deg, 20deg);
+	-moz-transform: skew(10deg, 20deg);
+}
+</style>
+</head>
+
+
+<body>
+	<div id="div1">크기변화</div>
+	<p></p>
+	<div id="div2">각도변화</div>
+	<p></p>
+	<div id="div3">비틀기</div>
+</body>
+</html>

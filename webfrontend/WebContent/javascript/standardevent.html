@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>표준 이벤트 모델</title>
+</head>
+<body>
+	<h1 id="myHeader">Click</h1>
+</body>
+<script>
+	var header = document.getElementById('myHeader');
+	header.addEventListener('click', function() {
+		this.innerHTML += '+';
+	});
+</script>
+</html>

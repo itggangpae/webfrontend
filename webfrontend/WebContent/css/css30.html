@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>z-index 속성을 이용한 박스의 겹치는 순서</title>
+<style type="text/css">
+h1 {
+	background-color: silver;
+}
+
+p {
+	border: 1px solid black;
+	padding: 10px;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+}
+
+.box1 {
+	background: yellow;
+	top: 100px;
+	left: 100px;
+	z-index: 3;
+}
+
+.box2 {
+	background: orange;
+	top: 120px;
+	left: 120px;
+	z-index: 2;
+}
+
+.box3 {
+	background: teal;
+	top: 140px;
+	left: 140px;
+	z-index: 1;
+}
+</style>
+</head>
+<body>
+	<h1>박스의 겹치는 순서 지정하기</h1>
+	<p class="box1">박스 1</p>
+	<p class="box2">박스 2</p>
+	<p class="box3">박스 3</p>
+</body>
+</html>

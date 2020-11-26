@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>목록상자</title>
+</head>
+<body>
+	<h1>목록상자 만들기</h1>
+	<form method="post" action="">
+		<fieldset>
+			<legend> 목록상자 </legend>
+			<p>
+				<label for="userAge">연령</label> <select id="userAge">
+					<option value="10">10대</option>
+					<option value="20">20대</option>
+					<option value="30">30대</option>
+					<option value="40">40대</option>
+					<option value="after50">50대 이후</option>
+				</select>
+			</p>
+
+			<p>
+				<label for="userPhone">연락처정보</label> <br /> <select id="userPhone"
+					size="5" multiple="multiple">
+					<option value="010-3790-1997">010-3790-1997</option>
+					<option value="010-3139-1997">010-3139-1997</option>
+					<option value="010-2721-1997">010-2721-1997</option>
+				</select>
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend> 목록항목의 그룹화 </legend>
+			<p>
+				<label for="userAddr">주소</label> <select id="userAddr">
+					<optgroup label="서울특별시">
+						<option value="gangnam-gu">강남구</option>
+						<option value="seocho-gu">서초구</option>
+						<option value="gangseo-gu">강서구</option>
+						<option value="yangcheon-gu">양천구</option>
+					</optgroup>
+
+					<optgroup label="광역시">
+						<option value="pusan">부산</option>
+						<option value="daegu">대구</option>
+						<option value="kwangju">광주</option>
+						<option value="incheon">인천</option>
+						<option value="daejeon">대전</option>
+					</optgroup>
+				</select>
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수를 다른 함수의 매개변수로 사용</title>
+<script>
+	var count = 1;
+
+	function sayHello() {
+		document.write("Hello World JavaScript : ", count + "<br />");
+		count++;
+	}
+
+	setInterval(sayHello, 5000);
+	// 5000ms 후에 호출하도록 sayHello 함수를 setInterval에 인자로 전달
+</script>
+</head>
+<body>
+</body>
+</html>

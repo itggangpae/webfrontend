@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM 가져오기</title>
+</head>
+
+<body>
+	<h1 id='header'>Hello</h1>
+</body>
+<script>
+	var headers = document.getElementsByTagName('h1');
+	headers[0].innerHTML = '태그 이름을 이용한 가져오기';
+	var header = document.getElementById('header');
+	header.style.border = '2px Solid Black';
+	header.style.color = 'Orange';
+	header.style.fontFamily = 'Helvetica';
+</script>
+</html>

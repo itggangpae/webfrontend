@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼 스타일</title>
+<style>
+ul {
+	list-style-type: none;
+}
+
+ul li {
+	clear: both;
+}
+
+form {
+	width: 50em;
+	border: 1px solid #666;
+	border-radius: 10px;
+	box-shadow: .2em .2em .5em #999;
+	background-color: #d0e9f6;
+	padding: 1em;
+	overflow: hidden;
+}
+
+label {
+	display: block;
+	float: left;
+	width: 10em;
+	text-align: right;
+	margin-right: .5em;
+	color: #04699d;
+}
+
+input.textinput {
+	width: 30em;
+	height: 2em;
+	border: 1px solid #666;
+	margin-bottom:1em;
+}
+
+textarea {
+	display: block;
+	width:30em;
+	height:5em;
+	border:1px solid #666;
+	margin-bottom:1em;
+	line-height:1.25;
+	overflow:auto;
+	resize:none;
+}
+input.textinput, textarea{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:.875em;s
+}
+
+fieldset{
+	margin:0;
+	padding:0;
+	border:none;
+}
+legend{
+	display:block;
+	width:10em;
+	float:left;
+	margin-right:.5em;
+	text-align:right;
+	color:#04699d;
+}
+
+#genders label, #message label{
+	color:#000;
+	display:inline;
+	float:none;
+	text-align:inherit;
+	width:auto;
+	font-weight:normal;
+	background-color:inherit;
+}
+
+#genders ul li{
+	display:inline;
+	margin-botton:0;
+}
+
+#message ul{
+	margin-left:.11em;
+}
+
+#message ul li{
+	display:inline;
+	clear:none;
+}
+
+#genders, #message{
+	margin-top:1em;
+}
+
+input[type="submit"], input[type="reset"]{
+	display:block;
+	width:10em;
+	height:2em;
+	float:left;
+	background:white;
+	font-size:inherit;
+	border: 1px solid #04699d;
+	border-radius:4px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,.5);
+	margin-top:1em;
+}
+input[type="button"]{
+	display:block;
+	width:10em;
+	height:2em;
+	float:right;
+	background:white;
+	font-size:inherit;
+	border: 1px solid #04699d;
+	border-radius:4px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,.5);
+}
+input[type="submit"]{
+	margin-left:10.5em;
+	margin-right: 1em;
+	color:#C00;
+}
+</style>
+</head>
+<body>
+	<form method="post" action="server.jsp">
+		<h2>회원가입</h2>
+		<ul>
+			<li><label for="email">email</label> <input type="text"
+				id="email" name="email" class="textinput" /> <input type="button"
+				alt="중복확인" value="중복확인" />
+			<li>
+			<li><label for="userPwd">비밀번호</label> <input type="password"
+				id="userpw" name="userpw" class="textinput" /></li>
+			<li><label for="yourstory">하고싶은 이야기</label> <textarea rows="3"
+					cols="30" placeholder="300자 이내로 작성" id="story" name="story"></textarea>
+			</li>
+
+			<li><label for="education">학력</label> <select name="education">
+					<option value="1">중졸</option>
+					<option value="2">고졸</option>
+					<option value="3">대졸</option>
+					<option value="4">대학원졸 이상</option>
+					<option value="5">대학원졸 이상</option>
+			</select></li>
+			<li>
+				<fieldset id="genders">
+					<legend>성별</legend>
+					<ul>
+					<li><label for="man"><input type="radio" name="gender" id="man"
+						value="male" /> 남자</label></li><li><label> <input type="radio" name="gender" id="woman"
+						value="female" />여자</label></li>
+					</ul>
+				</fieldset>
+			</li>
+
+			<li>
+				<fieldset id="message">
+					<legend>메시지 수신설정</legend>
+					<ul>
+						<li><label><input type="checkbox" name="accept"
+								id="acceptEmail" /> 메일 수신 허용</label></li>
+						<li><label><input type="checkbox" name="accept"
+								id="acceptSMS" />SMS 수신 허용</label></li>
+					</ul>
+				</fieldset>
+			</li>
+			<li class="buttons"><input type="submit" value="회원가입" /> <input
+				type="reset" value="작성취소" /></li>
+
+		</ul>
+	</form>
+</body>
+</html>

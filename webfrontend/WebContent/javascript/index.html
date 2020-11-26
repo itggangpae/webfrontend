@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>모바일 웹</title>
+
+</head>
+<body>
+	<p>PC에서 접속하셨습니다.</p>
+</body>
+<script>
+	//스마트 폰의 이름을 배열로 만듭니다.
+	var smartPhones = [ 'iphone', 'ipod', 'android', 'blackberry' ];
+
+	var mflag = false;
+
+	//모든 스마트 폰의 이름과 비교해서 스마트 폰 이름을 포함하고 있으면 모바일 페이지로 이
+	for ( var i in smartPhones) {
+		if (navigator.userAgent.toLowerCase().indexOf(smartPhones[i]) >= 0) {
+			mflag = true
+			break;
+		}
+	}
+	if (mflag == true) {
+		alert('스마트 폰에서 접속');
+		location.href = 'https://m.naver.com';
+	} else {
+		alert('스마트 폰 이외의 곳에서 접속');
+	}
+</script>
+</html>
+

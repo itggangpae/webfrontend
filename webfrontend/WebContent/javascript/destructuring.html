@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 구조 분해 할당</title>
+<script>
+	var obj1 = {
+		title : '원본 글',
+		reply : {
+			title : '댓글'
+		}
+	};
+	//var title = obj1.title;
+	//var reply = obj1.reply.title;
+	
+	const obj2 = {
+			  title: '제목',
+			  reply: {
+			    replytitle: '댓글 제목'
+			  }
+			}
+	const { title, reply:{replytitle}, k } = obj2;
+	console.log(title, replytitle, k); // '제목', '댓글 제목', undefined
+</script>
+</head>
+<body>
+
+</body>
+</html>

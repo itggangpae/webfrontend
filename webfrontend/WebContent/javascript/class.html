@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Class</title>
+<script>
+//ES5 에서의 클래스 정의
+/*
+function Car (brand, owner) {
+    this.brand = brand;
+    this.owner = owner;
+  }
+
+  Car.prototype.sell = function (newOwner) {
+    this.owner = newOwner;
+  };
+
+  const car = new Car('Kia', 'Ken');
+
+  car.sell('wan');
+ */
+ 
+   class Car {
+     constructor(brand, owner) {
+       this.brand = brand;
+       this.owner = owner;
+     }
+
+     sell(newOwner) {
+       this.owner = newOwner;
+     }
+   }
+
+   const car = new Car('Kia', 'Ken');
+
+   car.sell('wan');
+  
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본 매개변수</title>
+<script>
+	function logName (name = 'irin') {
+	  console.log(name);
+	}
+
+	logName();		 // surim
+	logName('jisu');	// son
+	
+	function getNumber () {
+		  console.log('Getting number..');
+		  return 666;
+	}
+
+	function logNumber (num = getNumber()) {
+		  console.log(num);
+	}
+		
+	logNumber();     		 // Getting number, 666
+	logNumber(undefined);     // Getting number, 666
+	logNumber(null);     	 // null, undefined
+	logNumber(false);    	 // false, undefined
+	logNumber(1000); 		 // 1000, undefined
+</script>
+</head>
+<body>
+
+</body>
+</html>

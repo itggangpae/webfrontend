@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>예외처리</title>
+</head>
+<body>
+	<script>
+		try {
+			var array = new Array(4294967296);
+			// 배열 maxlength(4,294,967,295) 보다 크게 생성하기 때문에 에러 발생
+		} catch (exception) {
+
+		}
+		alert("메시지");
+	</script>
+</body>
+</html>

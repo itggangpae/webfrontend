@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<title>iframe</title>
+	<style>
+.navi {
+	background: #003E00;
+	margin-top: -15px;
+	width: 95%;
+	height: 60px;
+}
+
+.navi ul {
+	list-style: none;
+	height: 40px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.navi ul li {
+	display: inline;
+	float: left;
+	font-size: 15px;
+}
+
+.navi a, .navi a:visited {
+	padding: 10px 5px 5px 35px;
+	display: block;
+	color: #fff;
+	width: 150px;
+	text-decoration: none;
+}
+
+.navi a:hover, .navi a:active, .navi a:focus {
+	text-shadow: 0px 2px 2px #000;
+	color: #FC0;
+}
+</style>
+</head>
+<body>
+	<div class="navi">
+		<ul>
+			<li><a href="image1.html" target="content">이미지 태그 샘플</a></li>
+			<li><a href="link.html" target="content">링크 태그</a></li>
+			<li><a href="list.html" target="content">목록 태그</a></li>
+			<li><a href="table.html" target="content">테이블 태그</a></li>
+		</ul>
+	</div>
+	<iframe name="content" src="meta.html" width="95%" height="550">
+	</iframe>
+</body>
+</html>

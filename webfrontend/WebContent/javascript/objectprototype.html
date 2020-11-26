@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Object 객체</title>
+</head>
+
+<body></body>
+<script>
+	// Object 객체의 프로토타입에 메소드를 추가
+	Object.prototype.test = function() {
+		alert(this);
+	};
+
+	var msg = "Object에 메소드 추가";
+	msg.test();
+</script>
+</html>

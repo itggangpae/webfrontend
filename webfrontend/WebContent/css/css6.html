@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>개별성(specificity)</title>
+<style type="text/css">
+@import url(base.css);
+
+p {
+	color: gray;
+}
+
+#specifi {
+	color: blue;
+}
+
+.cascade {
+	color: green;
+}
+
+h2 {
+	color: red;
+}
+</style>
+</head>
+
+<body>
+	<p style="color: blue;">스타일의 우선 순위</p>
+	<h2>단계적으로 적용되는 스타일</h2>
+	<h2 class="cascade">단계적으로 적용되는 스타일</h2>
+	<h2 id="specifi">단계적으로 적용되는 스타일</h2>
+</body>
+</html>

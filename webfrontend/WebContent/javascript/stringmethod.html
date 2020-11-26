@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문자열 메소드</title>
+</head>
+<body>
+</body>
+<script>
+	var name = "Taeyeon";
+	//한 글자씩 접근
+	for (var i = 0; i < name.length; i = i + 1) {
+		document.write(name.charAt(i) + "&nbsp;");
+	}
+	document.write("<br/>")
+	//모두 대문자로 변환해서 출력
+	name = name.toUpperCase();
+	document.write("<p>" + name + "</p>");
+
+	//좌우 공백을 제거하고 소문자로 변경한 후 앞에서부터 10글자 출력
+	var msg = " Girl's Generation ";
+	msg = msg.trim().toLowerCase().substring(0, 10).fontsize(10);
+	document.write("<div>" + msg + "</div>");
+</script>
+</html>

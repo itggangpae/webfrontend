@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>history객체의 연습</title>
+
+</head>
+<body>
+	<form>
+		<h3>history를 이용한 이동</h3>
+		<input type="button" value="이전 URL" onclick="historyTest_1()">
+		<input type="button" value="다음 URL" onclick="historyTest_2()">
+	</form>
+</body>
+<script>
+	function historyTest_1() {
+		history.back();
+		//history.go(-1);
+	}
+	function historyTest_2() {
+		history.forward();
+		//history.go(+1);
+	}
+</script>
+</html>
