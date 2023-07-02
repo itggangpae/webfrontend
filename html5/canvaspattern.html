@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Canvas API</title>
+
+</head>
+
+<body>
+  <section id="canvasbox">
+    <canvas id="canvas" width="2048" height="1024">
+      Your browser doesn't support the canvas element
+    </canvas>
+  </section>
+</body>
+
+<script>
+  var canvas = document.getElementById('canvas');
+  var context = canvas.getContext('2d');
+
+  var img = new Image();
+  img.src = "images/bricks.jpg";
+  img.addEventListener("load", modimage, false);
+
+  function modimage(e) {
+    img = e.target;
+    var pattern = context.createPattern(img, 'repeat');
+    context.fillStyle = pattern;
+    context.fillRect(0, 0, 2038, 1014);
+  }
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>set</title>
+    <script type="text/javascript">
+        const project = new Set(["강진축구", "사이버가수 아담", "사이버컵"]);
+        console.log(project.size);
+
+        project.add("사이버가수 아담");
+        project.add("프리스톤테일");
+        console.log(project.size);
+
+        project.delete("사이버컵")
+
+        project.forEach((e) => {
+            console.log(e);
+        });
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

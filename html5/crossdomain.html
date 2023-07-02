@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Cross Document Messaging</title>
+</head>
+<body>
+  <section id="formbox">
+    <form name="form">
+      <p>Your name: <input type="text" name="name" id="name" required></p>
+      <p><input type="button" name="button" id="button" value="Send"></p>
+    </form>
+  </section>
+  <section id="databox">
+    <iframe id="iframe" src="http://www.domain2.com/iframe.html" width="500" height="350"></iframe>
+  </section>
+</body>
+
+<script>
+
+function initiate(){
+  var button=document.getElementById('button');
+  button.addEventListener('click', send, false);
+    
+  window.addEventListener('message', receiver, false);
+}
+function send(){
+  var name=document.getElementById('name').value;
+  var iframe=document.getElementById('iframe');
+  iframe.contentWindow.postMessage(name, 'http://www.domain2.com');
+}
+function receiver(e){
+  if(e.origin=='http://www.domain2.com'){
+    document.getElementById('name').value=e.data;
+  }
+}
+window.addEventListener('load', initiate, false);
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>파일 미리보기</title>
+
+</head>
+<body>
+	<form id="form1">
+		<input type='file' id="imginp" accept="image/*"/> 
+		<img id="img" width="200" height="200" border="1" />
+	</form>
+</body>
+<script>
+	window.addEventListener("load", function(event) {
+		document.getElementById("imginp").addEventListener("change",
+			(e) => {
+				readURL(document.getElementById("imginp"));
+			})
+	});
+
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var filename = input.files[0].name;
+
+			var reader = new FileReader();
+
+			reader.addEventListener("load", function(e) {
+				document.getElementById('img').src = e.target.result;
+			});
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+</script>
+</html>

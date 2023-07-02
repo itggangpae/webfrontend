@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>무한 스크롤</title>
+</head>
+
+<body id="body">
+</body>
+<script>
+	window.addEventListener("load", (e) => {
+		for (var i = 0; i < 20; i++) {
+			document.getElementById('body').innerHTML += '<h1>Infinity Scroll</h1>';
+		}
+		
+		window.addEventListener("scroll", (e) => {
+			var supportPageOffset = window.pageXOffset !== undefined;
+			var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+			var scrollTop = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+			
+			var scrollHeight = scrollTop + window.innerHeight;
+			var documentHeight = document.body.clientHeight;
+			//alert(scrollHeight)
+			//alert(documentHeight)
+			// 스크롤의 높이와 문서의 높이가 같을 때
+			if (scrollHeight >= documentHeight) {
+				for (var i = 0; i < 10; i++) {
+					document.getElementById('body').innerHTML += '<h1>Infinity Scroll</h1>';
+				}
+			}
+		});
+	});
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>내장 객체의 기능 추가</title>
+<script type="text/javascript">
+    let sameKey = {one: 1, one: 2}; 
+    console.log(sameKey);
+
+    let one = 1, two = 2;
+    let values = {one, two}; 
+    console.log(values);
+
+    let obj = { 
+        getTotal(param){ //getTotal:function(param){
+            return param + 123; 
+        }
+    };
+    console.log(obj.getTotal(456))
+
+ </script>
+ </head>
+
+ <body>
+ </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>let&const</title>
+</head>
+<body>
+    <ul> 
+        <li>1~10</li> 
+        <li>11~20</li> 
+        <li>21~30</li>
+    </ul>
+</body>
+
+<script type="text/javascript">
+   var nodes = document.querySelector("ul");
+    for (var k = 0; k < nodes.children.length; k++){
+        var el = nodes.children[k];
+        el.onclick = function(event){
+            event.target.style.backgroundColor = "yellow";
+            console.log(k);
+        }
+    }
+
+    console.log(sports);
+</script>
+
+</html>

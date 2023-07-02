@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Canvas API</title>
+</head>
+
+<body>
+	<section id="canvasbox">
+		<canvas id="canvas" width="500" height="300">
+		</canvas>
+	</section>
+</body>
+
+<script>
+	var canvas = document.getElementById('canvas');
+	context = canvas.getContext('2d');
+
+	context.shadowColor = "rgba(0,0,0,0.5)";
+	context.shadowOffsetX = 4;
+	context.shadowOffsetY = 4;
+	context.shadowBlur = 5;
+
+	context.font = "bold 50px verdana, sans-serif";
+	context.fillText("my message", 100, 100);
+</script>
+
+</html>

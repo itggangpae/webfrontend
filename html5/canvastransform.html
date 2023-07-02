@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>canvas 테스트</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<canvas id="canvas" width="1024" height="768"> </canvas>
+</body>
+<script>
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+
+	context.translate(150, 150);
+	context.fillStyle = "red";
+	for (var i = 0; i < 10; i++) {
+		context.globalAlpha = (1 - (0.09 * i));
+		context.rotate(((Math.PI / 180) * 360) / 10);
+		context.fillRect(20, 20, 50, 100);
+	}
+
+	context.transform(3, 0, 0, 1, 0, 0);
+	context.font = "bold 20px verdana, sans-serif";
+	context.fillText("TEST", 20, 20);
+
+	context.transform(1, 0, 0, 10, 0, 0);
+	context.font = "bold 20px verdana, sans-serif";
+	context.fillText("TEST", 100, 20);
+</script>
+
+</html>

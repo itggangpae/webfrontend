@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>효과</title>
+
+<script src="js/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('h1').click(function() {
+			$('#ii').slideToggle('slow', function() {
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>Hello</h1>
+	<img id="ii" src="resources/image1.png" />
+	<img src="resources/image2.png" />
+</body>
+</html>

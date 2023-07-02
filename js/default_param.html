@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Operation</title>
+<script type="text/javascript">
+    let plus = (one, two = 2) => one + two; 
+    console.log(plus(1)); 
+    console.log(plus(1, undefined)); 
+    console.log(plus(1, 70));
+
+    function logName (name = 'irin') {
+	    console.log(name);
+	}
+
+	logName();		 // surim
+	logName('jisu');	// son
+
+    function getNumber () {
+		  console.log('Getting number..');
+		  return 1212;
+	}
+
+	function logNumber (num = getNumber()) {
+		  console.log(num);
+	}
+		
+	logNumber();     		 // Getting number, 1212
+	logNumber(undefined);     // Getting number, 1212
+	logNumber(null);     	 // null, undefined
+	logNumber(false);    	 // false, undefined
+	logNumber(1000); 		 // 1000, undefined
+ </script>
+ </head>
+
+ <body>
+ </body>
+</html>

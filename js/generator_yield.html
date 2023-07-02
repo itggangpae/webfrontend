@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Generator</title>
+<script type="text/javascript">
+    function* sports(one){
+        let two = yield one;
+        let param = yield two + one;
+        yield param + one;
+    }
+    let generatorObj = sports(10);
+
+    console.log(generatorObj.next());
+    console.log(generatorObj.next());
+    console.log(generatorObj.next(20));
+
+    function* sports(one){
+        yield one;
+        let check = 10;
+    }
+    let genObj = sports(10);
+
+    console.log(genObj.next());
+    console.log(genObj.next());
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

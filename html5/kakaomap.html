@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>위치 정보 사용</title>
+</head>
+
+<body>
+	<div id="map" style="width:500px;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=767bd1c0fb046671d16fc3574f705521">
+	</script>
+</body>
+<script>
+	navigator.geolocation.getCurrentPosition(
+		function (location) {
+			var container = document.getElementById('map');
+			var options = {
+				center: new kakao.maps.LatLng(location.coords.latitude,
+					location.coords.longitude),
+				level: 3
+			};
+
+			var map = new kakao.maps.Map(container, options);
+
+			// 마커가 표시될 위치입니다 
+			var markerPosition = new kakao.maps.LatLng(location.coords.latitude, location.coords.longitude);
+
+			// 마커를 생성합니다
+			var marker = new kakao.maps.Marker({
+				position: markerPosition
+			});
+
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
+
+			// 지도에 교통정보를 표시하도록 지도타입을 추가합니다
+			map.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+
+		},
+		function (error) {
+			alert(error.code)
+		}
+	);
+</script>
+
+</html>

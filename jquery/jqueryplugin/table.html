@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>스프레드시트</title>
+<link rel="stylesheet" media="screen" href="handsontable/dist/handsontable.full.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="handsontable/dist/handsontable.full.js"></script>
+<script>
+        $(function () {
+            var data = [
+                ['', '국어', '수학', '영어', '과학', '사회'],
+                ['강감찬', 86, 95, 95, 100, 75],
+                ['이순신', 90, 100, 100, 90, 80],
+                ['권율', 10, 85, 80, 20, 85],
+                ['조헌', 85, 90, 92, 95, 95],
+                ['사명대사', 95, 100, 98, 95, 100]
+            ];
+// 스프레드시트를 생성합니다.
+            $('#table').handsontable({
+                data: data,
+                minRows: 15,
+                minCols: 15,
+                rowHeaders: true,
+                contextMenu: true,
+                colHeaders: ['이름', '국어', '수학', '영어', '과학', '사회'],
+                onBeforeChange: function (data) { },
+                onChange: function (data) { }
+            });
+        });
+    </script>
+</head>
+<body>
+	<div id="table"></div>
+</body>
+</html>

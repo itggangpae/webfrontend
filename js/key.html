@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>키보드 이벤트</title>
+<style>
+	div{
+		text-align:center;
+	}
+	span{
+		display:block;
+		float:left;
+		width:30%;
+		border:1px solid black;
+		text-align:center;
+		font:1.5em serif;
+	}
+	.titlespan{
+		margin-top:1em;
+	}
+	.valuespan{
+		height:5em;
+		font:3em serif;
+	}
+</style>
+</head>
+<body>
+	<input size="40" placeholder="문자를 입력하세요" id="keyinput" />
+	<div>
+		<span class="titlespan">which</span>
+		<span class="titlespan">code</span>
+		<span class="titlespan">key</span>
+	</div>
+	<div>
+		<span class="valuespan" id="whichspan"></span>
+		<span class="valuespan" id="codespan"></span>
+		<span class="valuespan" id="keyspan"></span>
+	</div>
+</body>
+<script>
+	var keyinput = document.getElementById("keyinput")
+	keyinput.addEventListener("keydown", (e) => {
+		var event = e || window.event;
+		var keyCode = ('which' in event) ? event.which : event.keyCode;
+		document.getElementById("whichspan").innerHTML = keyCode + ":" + typeof(keyCode);
+		document.getElementById("codespan").innerHTML = event.code + ":" + typeof(event.code);
+		document.getElementById("keyspan").innerHTML = event.key + ":" + typeof(event.key);
+	});
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 FORM</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+	<script>
+		window.onload = function(){
+			$( "#birth" ).datepicker();
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label for="email">이메일</label>
+		<input type="email" id="email"/><br />
+		
+		<label for="birth">생일</label>
+		<input type="text" id="birth"/><br />
+		
+		<label for="tel">전화번호</label>
+		<input type="tel" pattern="^[0-9]{11}$"
+		title="전화번호는 숫자 11자리입니다."/>
+		<br />
+		<input type="submit" value="전송" />
+		
+	</form>
+</body>
+</html>
+
+
+
+
+
+

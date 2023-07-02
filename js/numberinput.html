@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>숫자만 입력받기</title>
+</head>
+<body>
+	<p>숫자만 입력받기</p>
+	<p>
+		<input type="text" onkeydown="onlyNumberInput1(event)"
+			style='IME-MODE: disabled' /> <span id="numinfo1"> </span><br/>
+		<br/>
+		<input oninput="onlyNumberInput2(event)" type="text">
+		<span id="numinfo2"> </span><br/>
+	</p>
+</body>
+
+<script>
+	function onlyNumberInput1(event )
+	{
+		if (window.event) // IE코드
+			var code = window.event.keyCode;
+		else // 타브라우저
+			var code = event.which;
+		
+		//방향키, 숫자, 숫자패드, 백스페이스, delete, enter, tab 은 예외
+		if ((code > 34 && code < 41) || (code > 47 && code < 58) || 
+				(code > 95 && code < 106) || code == 8 || code == 9 || code == 13 || code == 46)
+		{
+			window.event.returnValue = true;
+			document.getElementById("numinfo1").innerHTML = "";
+			return;
+		}
+		document.getElementById("numinfo1").innerHTML = "숫자만 입력하세요!";
+		if (window.event)
+			window.event.returnValue = false;
+		else
+			event.preventDefault();    
+	}
+
+	//숫자가 아닌 경우 자동 삭제    		
+	function onlyNumberInput2(event){
+		var e = event || window.event
+		var keyCode = (e.which) ? e.which : e.keyCode;
+
+		if (keyCode == 8 || keyCode == 46 || keyCode == 37 || keyCode == 39) {
+			document.getElementById("numinfo2").innerHTML = "";
+			return;
+		} else {
+			document.getElementById("numinfo2").innerHTML = "숫자만 입력하세요!";
+			e.target.value = e.target.value.replace(/[^0-9]/g, '');
+		};
+	}
+</script>
+</html>

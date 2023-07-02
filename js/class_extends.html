@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+    <script type="text/javascript">
+        class Sports {
+            constructor(member) {
+                this.member = member;
+            }
+            getMember() {
+                return this.member;
+            }
+        };
+
+        class Soccer extends Sports {
+            setGround(ground) {
+                this.ground = ground;
+            }
+        };
+
+        let obj = new Soccer('손흥민');
+
+        console.log(obj.getMember());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

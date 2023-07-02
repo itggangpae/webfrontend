@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>헤더 이용</title>
+	<style>
+		header {
+			height: 280px;
+			margin-top: 0;
+			background-image: url(images/bg.png);
+			background-repeat: no-repeat;
+			background-position: left top;
+		}
+
+		.navi {
+			background: #003E00;
+			margin-top: -15px;
+			width: 967px;
+			height: 60px;
+		}
+
+		.navi ul {
+			list-style: none;
+			height: 40px;
+			padding-top: 10px;
+			padding-bottom: 5px;
+		}
+
+		.navi ul li {
+			display: inline;
+			float: left;
+			font-size: 15px;
+		}
+
+		.navi a,
+		.navi a:visited {
+			padding: 10px 5px 5px 35px;
+			display: block;
+			color: #fff;
+			width: 150px;
+			text-decoration: none;
+		}
+
+		.navi a:hover,
+		.navi a:active,
+		.navi a:focus {
+			text-shadow: 0px 2px 2px #000;
+			color: #FC0;
+		}
+	</style>
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>HTML5 Sementic 태그</h1>
+		</header>
+		<nav class="navi">
+			<ul>
+				<li><a href="#">header</a></li>
+				<li><a href="#">nav</a></li>
+				<li><a href="#">section</a></li>
+				<li><a href="#">article</a></li>
+			</ul>
+		</nav>
+	</div>
+</body>
+
+</html>

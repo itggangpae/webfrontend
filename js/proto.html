@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>proto</title>
+<script type="text/javascript">
+    let Sports = function(){}; 
+    Sports.prototype.get = function(){}; 
+    let sportsObj = new Sports();
+    sportsObj.__proto__["set"] = function(){}; 
+    sportsObj.set();
+    let result = Sports.prototype.set; 
+    console.log(result);
+ </script>
+ </head>
+
+ <body>
+ </body>
+</html>

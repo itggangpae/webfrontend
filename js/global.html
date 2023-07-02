@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>let&const</title>
+
+    <script type="text/javascript">
+        //var를 사용하지 않았으므로 전역 변수
+        one = 100; 
+        console.log("함수 외부에서의 값 :", one);
+        function get(){
+            //전역 변수 one
+            one = 300;
+            console.log("함수 내에서의 값 :", one); 
+        }
+        
+        get();
+        console.log("함수 외부에서의 값 :", one);
+    </script>
+</head>
+
+<body>
+</body>
+</html>

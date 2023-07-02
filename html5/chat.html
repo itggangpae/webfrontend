@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>채팅</title>
+</head>
+<body>
+	닉네임:
+	<input type="text" id="nick" size="20" />
+	<br /> 보내는 메시지:
+	<input type="text" id="message" size="60" />
+	<input type="button" onclick="start()" value="전송" />
+	<br /> 받은 메시지:
+	<textarea id="disp" cols="80" rows="20"></textarea>
+
+</body>
+<script>
+	var webSocket = new WebSocket('ws://172.30.67.250:9000/Communications/chat');
+	webSocket.onerror = function(event) {
+		onError(event)
+	};
+	webSocket.onopen = function(event) {
+		onOpen(event)
+	};
+	webSocket.onmessage = function(event) {
+		onMessage(event)
+	};
+
+	var disp = document.getElementById("disp");
+	function onMessage(event) {
+		disp.value = event.data + "\n" + disp.value;
+	}
+	function onOpen(event) {
+		disp.value = '연결 성공';
+	}
+
+	function onError(event) {
+		alert(event.data);
+	}
+function start() {
+		webSocket.send(document.getElementById("nick").value + ":" + document.getElementById('message').value);
+		document.getElementById('message').value = "";
+	}
+</script>
+</html>

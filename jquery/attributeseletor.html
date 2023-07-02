@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>속성 선택자</title>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var addr = $('input[id=name]').val();
+			alert(addr);
+			addr = $('input[name=addr]').val();
+			alert(addr);
+		});
+	</script>
+</head>
+
+<body>
+	<input type="text" id="name" value="박문석" />
+	<input type="text" name="addr" value="서울시 양천구 목동" />
+</body>
+
+</html>

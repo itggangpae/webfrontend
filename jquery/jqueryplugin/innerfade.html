@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>이미지 슬라이더</title>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	width: 500px;
+	height: 350px;
+}
+</style>
+
+<script src="innerfade/js/jquery.js"></script>
+<script src="innerfade/js/jquery.innerfade.js"></script>
+<script>
+	$(function() {
+		// innerfade 플러그인을 적용합니다.
+		$('#inner_fade').innerfade({
+			animationtype : 'fade',
+			speed : 750,
+			timeout : 2000,
+			type : 'random',
+			containerheight : '350px'
+		});
+	});
+</script>
+</head>
+<body>
+	<ul id="inner_fade">
+		<li><img src="resource/image1.png" /></li>
+		<li><img src="resource/image2.png" /></li>
+		<li><img src="resource/image3.png" /></li>
+	</ul>
+</body>
+</html>

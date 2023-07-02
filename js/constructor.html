@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>생성자</title>
+<meta charset='UTF-8'>
+</head>
+
+<body></body>
+
+<script>
+	function person(name, phone) {
+		this.이름 = name;
+		this.전화번호 = phone;
+	}
+	var object = new person("박문석", "01037901997");
+
+	for ( var key in object)
+		document.write(key + ":" + object[key] + "<br>");
+</script>
+</html>
+

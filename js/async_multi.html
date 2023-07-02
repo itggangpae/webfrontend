@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async</title>
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        const getDog = async () => {
+            await sleep(1000);
+            return '소녀시대';
+        };
+
+        const getRabbit = async () => {
+            await sleep(500);
+            return '레드벨렛';
+        };
+        const getTurtle = async () => {
+            await sleep(3000);
+            return '에스파';
+        };
+        async function process() {
+            const first = await Promise.race([
+                getDog(),
+                getRabbit(),
+                getTurtle()
+            ]);
+            console.log(first);
+        }
+
+        window.addEventListener("load", (e) => {
+            document.getElementById("btn").addEventListener("click", (e) => {
+                process();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn">버튼</button>
+</body>
+
+</html>

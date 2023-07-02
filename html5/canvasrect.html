@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>캔버스 사각형</title>
+</head>
+
+<body>
+	<canvas id="canvas" width="360" height="200"> </canvas>
+</body>
+
+<script>
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+	context.fillRect(10, 50, 140, 30);
+	context.strokeRect(10, 100, 200, 30);
+</script>
+
+</html>

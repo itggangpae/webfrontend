@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+    <script type="text/javascript">
+        let sports = function () {
+            console.log(new.target);
+        }
+        sports();
+        new sports();
+        class Sports {
+            constructor() {
+                console.log("Sports:", new.target.name);
+            }
+        };
+        class Soccer extends Sports {
+            constructor() {
+                super();
+                console.log("Soccer:", new.target.name);
+            }
+        };
+        let sportsObj = new Sports();
+        let soccerObj = new Soccer();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

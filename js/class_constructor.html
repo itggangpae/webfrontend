@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+    <script type="text/javascript">
+        let Member = class {
+            constructor(name) {
+                this.name = name
+            }
+
+            getName() {
+                return this.name;
+            }
+
+            setName(name) {
+                this.name = name;
+            }
+        };
+
+        let obj = new Member("카리나");
+        console.log(obj.getName());
+
+        class Person {
+            constructor() {
+                return {
+                    name: "홍길동"
+                };
+            }
+            getName() {
+                return this.name;
+            }
+        }
+        let personObj = new Person();
+
+        console.log(personObj.name);
+        console.log(personObj.getName());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

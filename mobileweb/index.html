@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>모바일 웹</title>
+<script type="text/javascript">
+	//스마트 폰의 이름을 배열로 만듭니다.
+	var smartPhones = [ 'iphone', 'ipod', 'windows ce', 'android',
+			'blackberry', 'nokia', 'webos', 'opera mini', 'sonyerricsson',
+			'opera mobi', 'iemobile' ];
+
+	//모든 스마트 폰의 이름과 비교해서 스마트 폰 이름을 포함하고 있으면 모바일 페이지로 이동
+	for ( var i in smartPhones) {
+		if (navigator.userAgent.toLowerCase().indexOf(smartPhones[i]) >= 0) {
+			document.location = 'http://m.naver.com';
+			break;
+		}
+	}
+</script>
+</head>
+<body>
+	<p>모바일 운영체제가 아닌 곳에서 접속</p>
+</body>
+</html>

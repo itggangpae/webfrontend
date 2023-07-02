@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>sessiongStorage 테스트</title>
+	<meta charset="UTF-8">
+</head>
+
+<body onload="init()">
+	<fieldset>
+		<legend>세션 스토리지 이용</legend>
+		key: <input type="text" id="key" />
+		value: <input type="text" id="value" />
+		<input type="button" value="삽입" onclick="addData()" />
+		<input type="button" value="삭제" onclick="removeData()" />
+		<input type="button" value="윈도우 추가" onclick="window.open(location.href);" />
+	</fieldset>
+
+	<fieldset>
+		<legend>세션 스토리지 데이터</legend>
+		<select id="list" size=10 onchange="onListSelected()">
+		</select> <input type="button" value="재출력" onclick="showData()" />
+	</fieldset>
+</body>
+<script>
+	function init() {
+		var key = document.getElementById("key");
+		var value = document.getElementById("value");
+		var list = document.getElementById("list");
+		showData();
+	}
+
+	function showData() {
+		list.innerHTML = "";
+		for (var i = 0; i < sessionStorage.length; i++) {
+			var temp = sessionStorage.key(i);
+			list.options[list.options.length] =
+				new Option(temp + ":" + sessionStorage[temp], temp);
+		}
+	}
+
+	function addData() {
+		sessionStorage[key.value] = value.value;
+		showData();
+	}
+
+	function removeData() {
+		delete sessionStorage[key.value];
+		showData();
+	}
+
+	function onListSelected() {
+		var selectData = list.options[list.selectedIndex];
+		key.value = selectData.value;
+		value.value = sessionStorage[selectData.value];
+	}
+</script>
+
+</html>

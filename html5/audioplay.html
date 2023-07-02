@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>오디오 재생</title>
+</head>
+
+<body>
+	<input type="button" id="play" value="재생" />
+	<div id="time"></div>
+</body>
+
+<script>
+	var audio = new Audio("resource/sound.mp3");
+	audio.addEventListener("timeupdate", function () {
+		var timeDisplay = document.getElementById("time");
+		timeDisplay.innerHTML = Math.floor(audio.currentTime) + "/" +
+			Math.floor(audio.duration) + ""
+	}, false);
+
+	audio.voulume = 0.5;
+	audio.loop = true;
+
+	document.getElementById("play").addEventListener("click", function () {
+		audio.play()
+	})
+</script>
+
+</html>

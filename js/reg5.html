@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>유효성 검사</title>
+</head>
+<body>
+</body>
+<script>
+	var regExp = /\d{6}-[1234]\d{6}/;
+	var str = '910209-1011111';
+	var output = regExp.test(str);
+	alert(output);
+	str = prompt('소문자 또는 숫자로만 입력하세요.', '문자 입력');
+	regExp = /([0-9]|[a-z]){7}/g;
+	output = regExp.test(str);
+	if (output == true) {
+		alert('올바른 입력입니다.');
+	} else {
+		alert('잘못된 입력입니다.');
+	}
+</script>
+</html>

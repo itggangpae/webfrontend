@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>post parameter 전송</title>
+</head>
+<body>
+<script>
+		var request = new XMLHttpRequest();
+		//form 데이터를 생성한 후 필요한 파라미터 추가 
+		//form이 존재하는 경우는 form에 해당하는 DOM을 대입하면 form에 만들어진 데이터는 자동으로 추가됨
+		var formdata = new FormData();
+		formdata.append('name', 'adam');
+		request.open('POST', "post 요청 url", true);
+		
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		var param = "";
+		for (var pair of formdata.entries()) {
+		    param += pair[0]+ '=' + pair[1] + "&"; 
+		}
+		request.send(param);
+		
+		request.addEventListener('load', function() {
+			alert(request.responseText);
+		});
+</script>
+</body>
+</html>

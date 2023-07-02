@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>descriptor</title>
+<script type="text/javascript">
+    let obj =  {
+        sports: '배구',
+        get getSports(){
+            return this.sports;
+        },
+        set setSports(param){
+            this.sports = param;
+        }
+    };
+
+    obj.setSports = "야구";
+    console.log(obj.getSports);
+</script>
+</head>
+
+<body>
+</body>
+</html>

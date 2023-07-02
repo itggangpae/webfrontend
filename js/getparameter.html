@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>get parameter 전송</title>
+</head>
+<body>
+<script>
+	var request;
+	request = new XMLHttpRequest();
+    var queryString = "https://jsonplaceholder.typicode.com/comments?postId=1";
+
+	request.open('GET', queryString, true);
+	request.send('');
+
+	request.addEventListener('load', function() {
+		console.log(request.responseText);
+	});
+</script>
+</body>
+</html>

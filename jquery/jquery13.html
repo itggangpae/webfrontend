@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>스타일 변경</title>
+<style>
+	.sample{
+		color:green; 
+		font-size:30px;
+	}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		//하나씩 변경
+		$('#p1').css('color', 'red');
+		$('#p1').css('font-size', '20px');
+		
+		$('#p2').attr('style', 'color:blue; font-size:25px;');
+		
+		$('#p3').addClass('sample');
+	});
+</script>
+</head>
+
+<body>
+	<p id="p1">스타일 변경 - 각각 변경</p>
+	<p id="p2">스타일 변경 - 한꺼번에 변경</p>
+	<p id="p3">스타일 변경 - 클래스를 이용해서 변경</p>	
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>ajax level 2</title>
+
+<style>
+#formbox {
+	float: left;
+	padding: 20px;
+	border: 1px solid #999999;
+}
+
+#databox {
+	float: left;
+	width: 500px;
+	margin-left: 20px;
+	padding: 20px;
+	border: 1px solid #999999;
+}
+</style>
+
+</head>
+<body>
+	<section id="formbox">
+		<form name="form" id="form">
+			<p>
+				이메일:<input type="email" name="email" /><br/>
+				이름:<input type="text" name="name" /><br/>
+				<input type="button" name="button" id="button" value="데이터 가져오기">
+			</p>
+		</form>
+	</section>
+	<section id="databox"></section>
+</body>
+
+<script>
+	function initiate(){
+	  databox=document.getElementById('databox');
+	 
+	  var button=document.getElementById('button');
+	  button.addEventListener('click', send, false);
+	}
+	
+	function send(){
+	  var formdata = new FormData(document.getElementById("form"));
+	  formdata.append('age',50);
+	    
+	  var url="resource/process.jsp";
+	  var request=new XMLHttpRequest();
+	  request.addEventListener('load',show,false);
+	  request.open("POST", url, true);
+	  request.send(formdata);
+	}
+	
+	function show(e){
+	  databox.innerHTML=e.target.responseText;
+	}
+	
+	window.addEventListener('load', initiate, false);
+</script>
+</html>

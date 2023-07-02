@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>one 이벤트 등록</title>
+
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		$('h1').one('click', function() {
+			alert("클릭");
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>안녕하세요</h1>
+</body>
+</html>

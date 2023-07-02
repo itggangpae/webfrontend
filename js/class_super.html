@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+    <script type="text/javascript">
+        class Sports {
+            constructor(member) {
+                this.member = member;
+                console.log(this.member);
+            }
+
+            method() {
+                console.log('상위 클래스의 메서드');
+            }
+        };
+        class Soccer extends Sports {
+            constructor(member) {
+                super(member);
+                this.member = '차범근';
+                console.log(this.member);
+            }
+
+            method() {
+                super.method()
+                console.log('하위 클래스의 메서드');
+            }
+        };
+
+        let obj = new Soccer('손흥민');
+        obj.method()
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

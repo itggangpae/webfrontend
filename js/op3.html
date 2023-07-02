@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>??</title>
+    <script type="text/javascript">
+        const foo = null ?? 'default string';
+        console.log(foo);
+
+        const baz = 0 ?? 42;
+        console.log(baz);
+
+        let count;
+        let text;
+
+        count = 0;
+        text = "";
+
+        let qty = count || 42;
+        let message = text || "hi!";
+        console.log(qty); // 42 and not 0
+        console.log(message); // "hi!" and not ""
+
+        qty = count ?? 42;
+        message = text ?? "hi!";
+        console.log(qty); // 42 and not 0
+        console.log(message); // "hi!" and not ""
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

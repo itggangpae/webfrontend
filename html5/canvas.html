@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>canvas 테스트</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<canvas id="canvas" width="300" height="200"> </canvas>
+</body>
+<script>
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+	context.fillRect(0, 0, 150, 100);
+	context.fillText("안녕하세요 반갑습니다", 155, 110);
+</script>
+
+</html>

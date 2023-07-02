@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+<script type="text/javascript">
+    let one = [1, 2, 3, 4, 5];
+    //0번째부터 3번째 부터의 값으로 대체
+    console.log(one.copyWithin(0, 3));
+
+    let two = [1, 2, 3, 4, 5];
+    //0번째부터 2번째 부터 4번째 앞 까지의 값으로 대체
+    console.log(two.copyWithin(0, 2, 4));
+
+    let three = [1, 2, 3, 4, 5];
+    //배열 전체를 복사해서 3번째 부터 대체
+    console.log(three.copyWithin(3));
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>객체 접근</title>
+	<meta charset='UTF-8'>
+</head>
+
+<body>
+</body>
+
+<script>
+	var object = {
+		name: "박문석",
+		phone: "01037901997"
+	};
+
+	object.email = "ggangpae1@gmail.com";
+	delete(object.phone);
+	for (var key in object)
+		document.write(key + ":" + object[key] + "<br>");
+</script>
+
+</html>

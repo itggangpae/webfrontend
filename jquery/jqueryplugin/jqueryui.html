@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UI위젯 사용</title>
+<link rel="stylesheet" href="ui/jquery-ui.css" />
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	width: 300px;
+	height: 350px;
+	background-color: yellow;
+}
+
+h1:hover {
+	cursor: move;
+}
+</style>
+<script src="ui/jquery.min.js"></script>
+<script src="ui/jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("h1").draggable(); //<h1> 태그에 드래그 기능을 적용합니다.
+	});
+</script>
+
+</head>
+<body>
+	<h1>팝업 창</h1>
+</body>
+</html>

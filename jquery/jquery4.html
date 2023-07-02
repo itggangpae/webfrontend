@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>가상 선택자</title>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var gender = $('input[name=gender]:checked').val();
+		console.log("성별:", gender)
+	});
+
+	function change() {
+		var selectedItem = $('select>option:selected').val();
+		console.log("우승팀:", selectedItem);
+	};
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend> 성별 </legend>
+		<input type="radio" name="gender" value="man" checked="checked" />남자
+		<input type="radio" name="gender" value="woman" />여자<br />
+	</fieldset>
+	<fieldset>
+		<legend> 올해의 우승팀 </legend>
+		<select  onchange="change()">
+			<option>삼성라이온즈</option>
+			<option>SK와이번스</option>
+			<option>롯데자이언츠</option>
+			<option>KIA타이거즈</option>
+			<option>두산베어스</option>
+			<option>LG트윈스</option>
+			<option>한화이글즈</option>
+			<option>넥센히어로즈</option>
+		</select>
+	</fieldset>
+</body>
+</html>

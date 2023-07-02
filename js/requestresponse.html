@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트를 이용한 Ajax</title>
+</head>
+<body>
+</body>
+<script>
+	let request = new XMLHttpRequest();
+	request.open('GET', 'data/data.txt');
+	request.send('');
+
+    request.addEventListener('load', function(){
+    	alert("load 이벤트를 이용한 비동기 요청");
+    });
+</script>
+
+</html>

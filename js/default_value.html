@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Operation</title>
+<script type="text/javascript">
+    let [one, two, five = 5] = [1, 2];
+    console.log(five);
+
+    [one, two, five = 5] = [1, 2, 77];
+    console.log(five);
+
+    let {six=6, seven} = {seven: 7};
+    console.log(six, seven);
+
+    [one, two = one + 1, five = two + 3] = [1];
+    console.log(one, two, five);
+
+ </script>
+ </head>
+
+ <body>
+ </body>
+</html>

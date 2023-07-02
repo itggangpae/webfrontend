@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이미지 슬라이더</title>
+
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+/* Animation Canvas */
+.animation_canvas {
+	overflow: hidden;
+	position: relative;
+	width: 600px;
+	height: 400px;
+}
+
+/* Slider Panel */
+.slider_panel {
+	width: 3000px;
+	position: relative;
+}
+
+.slider_image {
+	float: left;
+	width: 600px;
+	height: 400px;
+}
+
+/* Slider Text Panel */
+.slider_text_panel {
+	position: absolute;
+	top: 200px;
+	left: 50px;
+}
+
+.slider_text {
+	position: absolute;
+	width: 250px;
+	height: 150px;
+}
+
+/* Control Panel */
+.control_panel {
+	position: absolute;
+	top: 380px;
+	left: 270px;
+	height: 13px;
+	overflow: hidden;
+}
+
+.control_button {
+	width: 12px;
+	height: 46px;
+	position: relative;
+	float: left;
+	cursor: pointer;
+	background: url('resources/point_button.png');
+}
+
+.control_button:hover {
+	top: -16px;
+}
+
+.control_button.active {
+	top: -31px;
+}
+</style>
+
+
+<script src="js/jquery.min.js"></script>
+<script>
+$(function () {
+    // 슬라이더를 움직여주는 함수
+    function moveSlider(index) {
+        // 슬라이더를 이동합니다.
+        var willMoveLeft = -(index * 600);
+        $('.slider_panel').animate({ left: willMoveLeft }, 'slow');
+
+        // control_button에 active클래스를 부여/제거합니다.
+        $('.control_button[data-index=' + index + ']').addClass('active');
+        $('.control_button[data-index!=' + index + ']').removeClass('active');
+
+        // 글자를 이동합니다.
+        $('.slider_text[data-index=' + index + ']').show().animate({
+            left: 0
+        }, 'slow');
+        $('.slider_text[data-index!=' + index + ']').hide('slow', function () {
+            $(this).css('left', -300);
+        });
+    }
+
+    // 초기 텍스트 위치 지정 및 data-index 할당
+    $('.slider_text').css('left', -300).each(function (index) {
+        $(this).attr('data-index', index);
+    });
+
+    // 컨트롤 버튼의 클릭 핸들러 지정 및 data-index 할당
+    $('.control_button').each(function (index) {
+        $(this).attr('data-index', index);
+    }).click(function () {
+        var index = $(this).attr('data-index');
+        moveSlider(index);
+    });
+
+    // 초기 슬라이더 위치 지정
+    var randomNumber = Math.round(Math.random() * 5);
+    moveSlider(randomNumber);
+});
+
+</script>
+
+</head>
+<body>
+	<h1>좋아하는 과일</h1>
+	<div class="animation_canvas">
+		<div class="slider_panel">
+			<img src="resources/fruit1.jpg" class="slider_image" /> <img
+				src="resources/fruit2.jpg" class="slider_image" /> <img
+				src="resources/fruit3.jpg" class="slider_image" /> <img
+				src="resources/fruit4.jpg" class="slider_image" /> <img
+				src="resources/fruit5.jpg" class="slider_image" />
+		</div>
+		<div class="slider_text_panel">
+			<div class="slider_text">
+				<h1>바나나</h1>
+				<p>과일치고는 과당 비율이 낮고 포도당 비율이 높다는 점인데[15] 이때문에 주식 대용으로 먹을 수 있는 과일로
+					꼽힌다.</p>
+			</div>
+			<div class="slider_text">
+				<h1>오렌지</h1>
+				<p>비타민 C가 매우 풍부해 하나만 먹어도 일일 비타민 C 권장량을 거의 채운다.</p>
+			</div>
+			<div class="slider_text">
+				<h1>포도</h1>
+				<p>포도에는당분이 많이 들어있어서 피로회복에 좋고, 비타민A,B,C,D 등이 풍부하여 신진대사를 원활하게 해준다.</p>
+			</div>
+			<div class="slider_text">
+				<h1>키위</h1>
+				<p>일곱가지 맛이 나는 과일이라는 별칭이 있다. 이 일곱가지 과일은 각각 딸기, 바나나, 파인애플, 사과,
+					복숭아, 구스베리 등이다.</p>
+			</div>
+			<div class="slider_text">
+				<h1>복숭아</h1>
+				<p>체내에 흡수가 빠른 각종 당류 및 비타민과 무기질 등이 풍부하여 피로회복에 많은 도움이 된다.</p>
+			</div>
+		</div>
+		<div class="control_panel">
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+			<div class="control_button"></div>
+		</div>
+
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>number 객체</title>
+	<meta charset='UTF-8'>
+</head>
+
+<body></body>
+<script>
+	// 변수를 선언합니다.
+	var number = 109.362742
+	// 출력합니다.
+	var output = ''
+	output += number.toFixed(1) + '\n'
+	output += number.toFixed(4)
+	alert(output)
+
+	let total = 0.1 + 0.2;
+	console.log(total);
+
+	let result = (Math.abs(0.1 + 0.2 - 0.3) < Number.EPSILON);
+	console.log(result);
+
+	let value = (Math.pow(10, 1) * 0.1) + (Math.pow(10, 1) * 0.2);
+	console.log(value / 10 === 0.3);
+</script>
+
+</html>

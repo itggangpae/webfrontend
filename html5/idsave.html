@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>웹 스토리지 사용</title>
+</head>
+
+<body>
+	<form action="login.jsp" id="loginform">
+		아이디:<input type="text" id="id" required="required" /><br />
+		<input type="checkbox" value="check" id="idsave"> 아이디 저장<br />
+		<input type="submit" value="로그인" />
+	</form>
+</body>
+
+<script>
+	var idsave = document.getElementById("idsave");
+	var ids = document.getElementById("id");
+
+	//윈도우가 로드를 끝냈을 때
+	window.addEventListener("load", function (e) {
+		var event = e || window.event
+		if (typeof localStorage.ids != 'undefined') {
+			ids.value = localStorage.ids;
+			idsave.checked = true;
+		}
+	});
+
+	document.getElementById("loginform").addEventListener(
+		"submit",
+		function (e) {
+			var event = e || window.event
+			//체크박스의 값 확인
+			if (idsave.checked == true) {
+				//아이디에 입력된 값 저장
+				localStorage.ids = ids.value;
+			} else {
+				//로컬 스토리지에 저장된 데이터 삭제
+				localStorage.clear();
+			}
+		})
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>canvas 테스트</title>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<canvas id="canvas" width="400" height="400"> </canvas>
+</body>
+
+<script type="text/javascript">
+	var canvas = document.getElementById("canvas");
+	var cx = canvas.getContext("2d");
+	cx.beginPath();
+	cx.arc(200, 200, 150, 0, 2 * Math.PI, true);
+	cx.clip();
+	var image = new Image();
+	image.onload = function () {
+		cx.drawImage(image, 0, 0, canvas.width, canvas.height);
+	};
+	image.src = "http://cfile202.uf.daum.net/image/1960C644501781AD20E86B";
+</script>
+
+</html>

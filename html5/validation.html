@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>validation test</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+	<form action="server">
+		<p>
+			<label>전화번호:</label> <input id="phone" type="tel"
+				placeholder="(xxx) xxxx-xxx" required>
+		</p>
+		<p>
+			<label>신용카드:</label> <input id="card" 
+			pattern="[0-9]{16}" required title="신용카드 번호는 숫자 16자리">
+		</p>
+		<p>
+			<input type="submit" name="register" value="가입">
+		</p>
+	</form>
+</body>
+</html>

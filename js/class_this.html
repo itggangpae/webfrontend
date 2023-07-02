@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Class</title>
+<script type="text/javascript">
+    class Sports{
+        constructor(){
+            console.log(Sports.getGround());
+            console.log(this.constructor.getGround());
+        }
+        static getGround(){
+            return "상암구장";
+        }
+    };
+    let obj = new Sports();
+</script>
+</head>
+
+<body>
+</body>
+</html>

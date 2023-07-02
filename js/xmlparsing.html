@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>XML 파싱</title>
+</head>
+
+<body></body>
+<script>
+	request = new XMLHttpRequest();
+	request.open('GET', 'data/tel.xml');
+	request.send('');
+
+	request.addEventListener('load', () => {
+		var xmlText = request.responseXML
+		var names = xmlText.getElementsByTagName('name');
+		var cells = xmlText.getElementsByTagName('cell');
+
+		for (var i = 0; i < names.length; i++) {
+			var name = names[i].childNodes[0].nodeValue;
+			var cell = cells[i].childNodes[0].nodeValue;
+			document.body.innerHTML += '<h1>이름:' + name + '</h1>';
+			document.body.innerHTML += '<h2>전번:' + cell + '</h2>';
+		}
+	});
+</script>
+
+</html>

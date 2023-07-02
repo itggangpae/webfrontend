@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>선택한 파일 정보 확인</title>
+</head>
+
+<body>
+	<form>
+		<input type="file" id="file" multiple>
+	</form>
+</body>
+<script>
+	document.getElementById("file").addEventListener("change", function showfileinfo() {
+		var selectFiles = document.getElementById("file").files;
+		var fileAr = [];
+		for (var i = 0; i < selectFiles.length; i++) {
+			var file = selectFiles[i];
+			fileAr.push("파일명:" + file.name + " 크기:" + file.size);
+		}
+		alert(fileAr.join("\n"));
+	});
+</script>
+
+</html>

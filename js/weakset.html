@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>weakset</title>
+<script type="text/javascript">
+    try{
+        const project = new WeakSet(["강진축구", "사이버가수 아담", "사이버컵"]);
+    }catch(e){
+        console.log("값으로 WeakSet 생성 불가");
+    }
+
+    const project = new WeakSet([new String("강진축구"), new String("사이버가수 아담"), new String("프리스톤테일")]);
+    console.log(project);
+</script>
+</head>
+
+<body>
+</body>
+</html>

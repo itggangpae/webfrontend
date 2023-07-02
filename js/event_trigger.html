@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 강제 발생</title>
+</head>
+<body>
+	<button id="button_a">ButtonA</button>
+	<button id="button_b">ButtonB</button>
+	<h1>
+		Button A - <span id="counter_a">0</span>
+	</h1>
+	<h1>
+		Button B - <span id="counter_b">0</span>
+	</h1>
+</body>
+<script>
+	var buttonA = document.getElementById('button_a');
+	var buttonB = document.getElementById('button_b');
+	var counterA = document.getElementById('counter_a');
+	var counterB = document.getElementById('counter_b');
+	buttonA.addEventListener("click",() => {
+		counterA.innerHTML = Number(counterA.innerHTML) + 1;
+	});
+	buttonB.addEventListener("click",() => {
+		counterB.innerHTML = Number(counterB.innerHTML) + 1;
+		buttonA.click();
+	});
+</script>
+</html>

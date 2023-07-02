@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Property Descriptor</title>
+</head>
+
+<body></body>
+<script>
+	var obj = {};
+    Object.defineProperty(obj, "item", {
+        get: function(){
+            console.log('getter 호출');
+            return this.sports;
+        },
+
+        set: function(param){
+            console.log('setter 호출');
+            this.sports = param;
+        }
+    });
+
+    obj.item = "야구";
+    console.log(obj.item);
+</script>
+</html>
+
+
+

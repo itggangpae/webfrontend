@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 탐색</title>
+
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		//table 태그 내에서 txt라는 아이디를 가진 input의 val()을 출력
+		var txt = $("table").find("#txt").val();
+		console.log("txt:" , txt);
+		txt = $("table").find("tr:eq(0)").find("td:eq(0)").find("#txt").val();
+		console.log("txt:" , txt);
+		
+		//txt라는 아이디를 가진 객체에서 txt라는 클래스를 가진 2번째 input의 값 가져오기
+		txt = $("#txt").parent().next().find(".txt:eq(1)").val();
+		console.log("txt:" , txt);
+		//txt라는 아이디를 가진 객체에서 체크된 라디오 버튼 찾아오기
+		var gender = $("#txt").parent().parent().next().find("input[name=rdo]:checked").val();
+		console.log("gender:", gender);
+	});
+</script>
+</head>
+
+
+<body>
+	<table>
+		<tr>
+			<td>
+				<input type="text" id="txt" value="텍스트값" />
+			</td>
+			<td>
+				<input type="text" class="txt" value="텍스트값1" />
+				<input type="text" class="txt" value="텍스트값2" />
+				<input type="text" class="txt" value="텍스트값3" />
+				<input type="text" class="txt" value="텍스트값4" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="radio" name="rdo" value="남자" />남자
+				<input type="radio" name="rdo" value="여자" checked="checked" />여자
+			</td>
+		</tr>
+		
+	</table>
+</body>
+</html>

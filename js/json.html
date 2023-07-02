@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON Parsing</title>
+</head>
+<body></body>
+<script>
+	//배열 생성	
+	//배열을 JSON 문자열로 변환
+	var study = '["Java", "oracle", "frontend"]';
+	var subject = '{"language":"Java", "Database":"Oracle"}';
+	var content = '{"frontend": ["HTML", "CSS", "JavaScript"]}';
+
+	//study의 모든 내용을 화면에 출력
+	var x = JSON.parse(study);
+	/*
+	for(var idx in x){
+		document.write(ar[idx] + "<br />");
+	}
+	 */
+	x.forEach(function(element, index, array) {
+		document.write(element + "<br />");
+	});
+	document.write("<br /><br /><br />");
+
+	//subject의 모든 내용을 화면에 출력
+	var y = JSON.parse(subject);
+	for ( var attr in y) {
+		document.write(attr + ":" + y[attr] + "<br />");
+	}
+
+	//content 안의 모든 내용을 화면에 출력
+	//객체가 있고 그 안에 frontend 라는 속성에 배열이 존재
+	var z = JSON.parse(content);
+	//z 객체 안에 있는 frontend라는 속성의 데이터를  c에 대입
+	var c = z.frontend;
+	alert(c);
+</script>
+</html>

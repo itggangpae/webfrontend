@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Generator</title>
+<script type="text/javascript">
+    function* gen() {
+        yield* [10, 20];
+    }
+    var genObj = gen();
+
+    console.log(genObj.next());
+    console.log(genObj.next());
+    console.log(genObj.next(77));
+
+    let plusGen = function*(value) {
+        yield value + 5;
+        yield value + 10;
+    };
+    var gen = function*(value) {
+        yield* plusGen(value);
+        yield value + 20;
+    };
+    genObj = gen(10);
+
+    console.log("1:", genObj.next());
+    console.log("2:", genObj.next());
+    console.log("3:", genObj.next());
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

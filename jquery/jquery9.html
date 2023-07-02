@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html 설정</title>
+<script src="js/jquery.min.js"></script>
+<script>
+	function html() {
+		var txt = $('#header').html();
+		alert(txt);
+	};
+	function setHtml() {
+		$('#header').html("안녕하세요!<br/>반갑습니다.");
+	};
+	function setText() {
+		$('#header').text("안녕하세요!<br/>반갑습니다.");
+	};
+</script>
+</head>
+
+<body>
+	<h1 id="header">0</h1>
+	<fieldset>
+		<legend>문서 내부 작업</legend>
+		<button onclick="html()">내용 가져오기</button>
+		<button onclick="setHtml()">태그를 적용해서 삽입</button>
+		<button onclick="setText()">태그를 적용하지 않고 삽입</button>
+	</fieldset>
+</body>
+</html>

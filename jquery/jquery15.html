@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery Array</title>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var ar = [{
+					name : 'sun',
+					team : 'KIA'
+				}, {
+					name : 'ryu',
+					team : 'SAMSUNG'
+				}, {
+					name : 'lee',
+					team : 'SK'
+				}, {
+					name : 'yang',
+					team : 'LOTTE'
+				}, 
+				{
+					name : 'kim',
+					team : 'DUSAN'
+				}, {
+					name : 'kim',
+					team : 'LG'
+				}, {
+					name : 'han',
+					team : 'HANHWA'
+				}, {
+					name : 'kim',
+					team : 'NEXEN'
+				}];
+				var str = '';
+				$.each(ar, function(index, item) {
+					str += '<p>' + item.name + ':' + item.team + '</p>';
+				});
+				$('body').html(str);
+			});
+		</script>
+	</head>
+	<body> </body>
+</html>
+				

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String</title>
+<script type="text/javascript">
+    console.log("1:", String.fromCodePoint(35, 36, 37));
+    console.log("2:", String.fromCodePoint(0x31, 0x32, 0x33));
+    console.log("3:", String.fromCodePoint(44032, 44033)); 
+    console.log("4:", String.fromCodePoint(0x1F418));
+    console.log("5:", String.fromCharCode(0x1f418)); 
+    console.log("6:", String.fromCharCode(0xD83D, 0xDC18));
+
+    console.log("")
+
+    console.log("가".codePointAt(0)); 
+    let values = "ABC";
+    for (var value of values){ 
+        console.log(value, value.codePointAt(0));
+    };
+
+    console.log()
+
+    console.log("1:", "ㄱ".charCodeAt(0)); 
+    console.log("2:", "ㅏ".charCodeAt(0));
+    let jamo = "\u3131\u314F";
+    console.log("3:", jamo);
+    console.log("4:", jamo.normalize("NFC"));
+    
+</script>
+</head>
+
+<body>
+</body>
+</html>

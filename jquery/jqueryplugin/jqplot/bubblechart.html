@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>차트</title>
+<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="jqplot/excanvas.js"></script><![endif]-->
+<link rel="stylesheet" href="dist/jquery.jqplot.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="dist/jquery.jqplot.min.js"></script>
+<script type="text/javascript" src="dist/plugins/jqplot.barRenderer.js"></script>
+<script type="text/javascript" src="dist/plugins/jqplot.bubbleRenderer.js"></script>
+<script>
+	$(function() {
+		var arr = [[11, 123, 1236, "Acura"], [45, 92, 1067, "Alfa Romeo"], 
+		    [24, 104, 1176, "AM General"], [50, 23, 610, "Aston Martin Lagonda"], 
+		    [18, 17, 539, "Audi"], [7, 89, 864, "BMW"], [2, 13, 1026, "Bugatti"]];
+		    plot1 = $.jqplot('chartdiv',[arr],{
+		        title: 'Transparent Bubbles',
+		        seriesDefaults:{
+		            renderer: $.jqplot.BubbleRenderer,
+		            rendererOptions: {
+		                bubbleAlpha: 0.6,
+		                highlightAlpha: 0.8
+		            },
+		            shadow: true,
+		            shadowAlpha: 0.05
+		        }
+		    });    
+	});
+</script>
+</head>
+<body>
+	<div id="chartdiv"></div>
+</body>
+</html>

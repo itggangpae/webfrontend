@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Forms</title>
+  <meta charset="utf-8" />
+  <script>
+    function initiate() {
+      name1 = document.getElementById("firstname");
+      name2 = document.getElementById("lastname");
+      name1.addEventListener("input", validation, false);
+      name2.addEventListener("input", validation, false);
+
+      validation();
+    }
+
+    function validation() {
+      if (name1.value == '' && name2.value == '') {
+        name1.setCustomValidity('적어도 하나는 입력해야 합니다.');
+        name1.style.background = '#FFDDDD';
+      } else {
+        name1.setCustomValidity('');
+        name1.style.background = '#FFFFFF';
+      }
+    }
+    window.addEventListener("load", initiate, false);
+  </script>
+</head>
+
+<body>
+  <section id="form">
+    <form name="registration" method="get">
+      First Name:
+      <input type="text" name="firstname" id="firstname">
+      Last Name:
+      <input type="text" name="lastname" id="lastname">
+      <input type="submit" id="send" value="가입">
+    </form>
+  </section>
+</body>
+
+</html>

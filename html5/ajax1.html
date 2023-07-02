@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>AJAX Level 2</title>
+<style>
+#formbox {
+	float: left;
+	padding: 20px;
+	border: 1px solid #999999;
+}
+
+#databox {
+	float: left;
+	width: 500px;
+	margin-left: 20px;
+	padding: 20px;
+	border: 1px solid #999999;
+}
+</style>
+</head>
+
+<body>
+	<section id="formbox">
+		<form name="form">
+			<p>
+				<input type="button" name="button" id="button" value="텍스트 파일의 내용 읽어오기">
+			</p>
+		</form>
+	</section>
+	<section id="databox"></section>
+</body>
+
+<script>
+    function initiate(){
+      databox=document.getElementById('databox');
+    
+      var button=document.getElementById('button');
+      button.addEventListener('click', read, false);
+    }
+    function read(){
+      var url="resource/textfile.txt";
+      var request=new XMLHttpRequest();
+      request.addEventListener('load',show,false);
+      request.open("GET", url, true);
+      request.send(null);
+    }
+    function show(e){
+      databox.innerHTML=e.target.responseText;
+    }
+    window.addEventListener('load', initiate, false);
+  </script>
+
+</html>

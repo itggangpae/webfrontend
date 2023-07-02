@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자 위치 설정</title>
+<style>
+	img{
+		width:100px;
+		height:100px;
+	}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		//2초 후에 
+		setTimeout(function(){
+			var html="<img id='img2' src='resources/fruit2.jpg' />";
+			$("#img3").before(html);
+		}, 2000);
+	});
+</script>
+</head>
+<body>
+	<img id="img1" src="resources/fruit1.jpg"/>
+	<img id="img3" src="resources/fruit3.jpg" />
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>카카오 동영상 검색</title>
+</head>
+<body>
+	검색할 동영상
+	<input type="text" id="clipname" value='블랙핑크'/>
+	<input type="button" value="검색" id='searchbtn'/>
+	<p></p>
+	<div id="disp"></div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+var key = 'ae6b2875ee4452804ed4e01890078a7e';
+var disp = document.getElementById("disp");
+var pageno = 1;
+//테스트를 위해 내부에 공간을 채워둡니다.
+$(document).ready(function() {
+	search();
+	
+	// 스크롤 이벤트 발생 시
+	$(window).scroll(function() {
+		// 필요한 변수를 구합니다.
+		var scrollHeight = $(window).scrollTop() + $(window).height();
+		var documentHeight = $(document).height();
+
+		// 스크롤의 높이와 문서의 높이가 같을 때
+		if (scrollHeight == documentHeight) {
+			search(pageno+1)
+		}
+	});
+	
+	$('#searchbtn').click(function(){
+		search();
+	})
+});
+
+function search(no){
+	if(no == undefined){
+		pageno = 1;
+	}else{
+		pageno = no;
+	}
+	$.ajax({
+		url : "https://dapi.kakao.com/v2/search/vclip",
+		headers : {
+			'Authorization' : 'KakaoAK ' + key
+		},
+		type : "get",
+		data : {
+			query:document.getElementById("clipname").value,
+			size:30,
+			page:pageno
+		},
+		success : function(result) {
+			if(pageno == 1){
+				disp.innerHTML = '';
+			}
+			var documents = result.documents;
+			for(var idx in documents){
+				var vclip = documents[idx];
+				disp.innerHTML += "<p><a href='" + vclip.url  + "'>'"+ vclip.title + '</a></p>'; 
+				
+			}
+		}
+	});
+}
+	
+</script>
+</html>

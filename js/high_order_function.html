@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>고차 함수</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+    const calc = function (value, a, b) {
+        const add = function (a, b) {
+            return a + b;
+        }
+
+        const multiply = function (a, b) {
+            return a * b;
+        }
+
+        const result = multiply(add(a, b), value)
+
+        return function () {
+            console.log('result:' + result)
+        };
+    }
+
+    const response = calc(30, 1, 2);
+    response();
+</script>
+
+</html>

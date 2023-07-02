@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+<script type="text/javascript">
+    let arrayObj = Array.from({0: "zero", 1: "one", length: 2});
+    console.log(Array.isArray(arrayObj));
+    console.log(arrayObj);
+
+    let stringObj = Array.from("ABC");
+    console.log(stringObj);
+
+    let arrayLike = {0: 10, 1: 30, length: 2};
+    let values = Array.from(arrayLike, function(value) {
+        return value + this.bonus;
+    }, {bonus: 100});
+    console.log(values);
+ </script>
+ </head>
+
+ <body>
+ </body>
+</html>

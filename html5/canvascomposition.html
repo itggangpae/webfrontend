@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>canvas 테스트</title>
+	<meta charset="utf-8" />
+
+</head>
+
+<body>
+	<canvas id="canvas" width="1024" height="768"> </canvas>
+</body>
+
+<script>
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+
+
+	context.globalCompositeOperation = "lighter";
+	context.fillStyle = "red";
+	context.fillRect(0, 0, 100, 100);
+	context.fillStyle = "green";
+	context.fillRect(50, 50, 100, 100);
+
+	/*
+	context.fillStyle="#990000";
+	context.fillRect(100,100,300,100);
+ 
+	context.globalCompositeOperation="destination-atop";
+	
+	context.fillStyle="#AAAAFF";
+	context.font="bold 80px verdana, sans-serif";
+	context.textAlign="center";
+	context.textBaseline="middle";
+	
+	context.fillText("TEST",250,110);
+	*/
+</script>
+
+</html>

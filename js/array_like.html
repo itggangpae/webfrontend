@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>array-like</title>
+    <script type="text/javascript">
+        let values = {
+            0: "zero",
+            1: "one",
+            2: "two",
+            length: 3
+        }
+
+        for (var key in values) {
+            console.log(key, ':', values[key]);
+        }
+
+        for (var k = 0; k < values.length; k++) {
+            console.log(values[k]);
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

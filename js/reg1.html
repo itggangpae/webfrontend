@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>정규 표현식 메소드</title>
+</head>
+<body>
+</body>
+<script>
+	var regExp = /script/;
+	var String = 'Javascript RegExp';
+	var result = null;
+	if (regExp.test(String))
+		result = regExp.exec(String);
+	else
+		result = "문자열에 포함되어 있지 않습니다."
+
+	alert(result);
+</script>
+</html>

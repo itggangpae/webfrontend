@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동기식 처리</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+</body>
+
+<script>
+    let  work = () => {
+        const start = Date.now();
+        for (let i = 0; i < 1000000000; i++) {}
+        const end = Date.now();
+        console.log(end - start + 'ms');
+    }
+
+    window.addEventListener("load", (e) => {
+        document.getElementById("btn").addEventListener("click", (e) => {
+            work();
+            console.log("다음 작업");
+        });
+    })
+</script>
+</html>

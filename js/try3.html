@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>예외처리</title>
+</head>
+<body>
+</body>
+<script>
+	try {
+        console.log('try');
+        new Array(-1); // RangeError: Invalid array length
+    } catch (e) {
+        console.log('catch');
+    } finally {
+        console.log('finally');
+    }
+</script>
+</html>

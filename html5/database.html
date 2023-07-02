@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>데이터베이스 테스트</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<fieldset>
+		<legend>데이터베이스</legend>
+		이름: <input type="text" id="name" /> 나이: <input type="text" id="age" />
+		주소: <input type="text" id="address" /> <input type="button" value="삽입" onclick="addData()" />
+	</fieldset>
+
+	<fieldset>
+		<legend>결과</legend>
+		<select id="list" size=10>
+		</select> <input type="button" value="삭제" onclick="removeData()" />
+	</fieldset>
+</body>
+
+<script>
+	var db;
+
+	function init() {
+		db = window.openDatabase("AddressBook", "1", "AddressBookDB",
+			1024 * 1024);
+		db.transaction(function (tx) {
+			tx.executeSql("create table if not exists AddressBook(" +
+				"num integer primary key autoincrement," +
+				" name, age integer, address)");
+		});
+		showData();
+	}
+
+	function showData() {
+		db.transaction(function (tx) {
+			tx.executeSql("select * from AddressBook", [], function (tx, rs) {
+				var list = document.getElementById("list");
+				list.innerHTML = "";
+				var rows = rs.rows;
+
+				for (var i = 0; i < rows.length; i++) {
+					var row = rows.item(i);
+					var option = new Option(row.num + "\t" + row.name + "\t" +
+						row.age + "\t" + row.address, row.num);
+					list.options[list.options.length] = option;
+				}
+			});
+		});
+	}
+
+	function addData() {
+		var name = document.getElementById("name").value;
+		var age = document.getElementById("age").value;
+		var address = document.getElementById("address").value;
+		db
+			.transaction(function (tx) {
+				tx
+					.executeSql(
+						"insert into AddressBook(name, age, address) values(?,?,?)",
+						[name, age, address],
+						function (tx, rs) {
+							alert("레코드가 저장되었습니다");
+							showData();
+						});
+			});
+	}
+
+	function removeData() {
+		var list = document.getElementById("list");
+		if (list.selectedIndex < 0) {
+			return;
+		}
+		var selected = list.options[list.selectedIndex].value;
+		db.transaction(function (tx) {
+			tx.executeSql("delete from AddressBook where num=?", [selected],
+				function () {
+					showData();
+				});
+		});
+	}
+
+	window.addEventListener("load", init());
+</script>
+
+</html>

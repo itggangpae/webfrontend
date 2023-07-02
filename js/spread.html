@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>spread</title>
+    <script type="text/javascript">
+        //배열의 spread 연산
+        let aespa = ["카리나", "지젤", "윈터", "닝닝"];
+        console.log(aespa);
+        let [leader, ...etc] = aespa;
+        console.log(leader);
+        console.log(etc);
+
+        //객체의 spread 연산
+        let address = {
+            country: '제주특별자치도',
+            city: '제주',
+            address1: '우도면',
+            address2: '연평리',
+            address3: '2426'
+        }
+        const {
+            country,
+            city,
+            ...detail
+        } = address
+        console.log(detail)
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

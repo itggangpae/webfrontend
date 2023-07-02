@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>destructuring</title>
+<script type="text/javascript">
+ 	//오브젝트를 분해해서 할당할 때는 변수 이름 과 속성이 같을 때  대입됨
+    let {one, two} = {one: 1, nine: 9}; 
+    console.log(one, two);
+
+    //속성의 값을 직접 할당할 때는 이름이 같을 필요가 없음
+    var obj1 = {
+		title : '원본 글',
+		reply : {
+			title : '댓글'
+		}
+	};
+	
+	var title1 = obj1.title;
+	var reply1 = obj1.reply.title;
+    console.log(title1, reply1);
+
+    const obj2 = {
+			  title: '제목',
+			  reply: {
+			    replytitle: '댓글 제목'
+			  }
+			}
+	const { title, reply:{replytitle}, k } = obj2;
+	console.log(title, replytitle, k); // '제목', '댓글 제목', undefined
+
+ </script>
+ </head>
+
+ <body>
+ </body>
+</html>

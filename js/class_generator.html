@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Class</title>
+<script type="text/javascript">
+    class Member{
+        *gen() {
+            yield 10;
+            yield 20;
+        }
+    };
+    
+    let obj = new Member();
+    let genObj = obj.gen();
+
+    console.log(genObj.next());
+    console.log(genObj.next());
+</script>
+</head>
+
+<body>
+</body>
+</html>

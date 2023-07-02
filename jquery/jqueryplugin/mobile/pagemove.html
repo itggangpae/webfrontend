@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script
+	src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header">
+			<h1>머리글</h1>
+		</div>
+		<div data-role="content">
+			<ul>
+				<li><a href="#subPage1" data-transition="pop">Data1</a></li>
+				<li><a href="#subPage2" data-rel="dialog" data-transition="pop">Data2</a></li>
+			</ul>
+		</div>
+		<div data-role="footer">
+			<h1>바닥글</h1>
+		</div>
+	</div>
+	<div data-role="page" id="subPage1" data-add-back-btn="true">
+		<div data-role="header">
+			<h1>하위 페이지</h1>
+		</div>
+		<div data-role="content">
+			<ul>
+				<li>Data1_1</li>
+				<li>Data1_2</li>
+				<li>Data1_3</li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="page" id="subPage2">
+		<div data-role="header">
+			<h1>하위 페이지</h1>
+		</div>
+		<div data-role="content">
+			<ul>
+				<li>Data2_1</li>
+				<li>Data2_2</li>
+				<li>Data2_3</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

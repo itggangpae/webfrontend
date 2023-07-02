@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>터치 이벤트</title>
+    <script>
+        window.addEventListener("load", function (event) {
+            document.addEventListener('touchstart', function (e) {
+                document.getElementById("body").innerHTML += '<h1>터치 시작</h1>';
+            });
+            document.addEventListener('touchmove', function (e) {
+                document.getElementById("body").innerHTML += '<h1>터치 이동</h1>';
+            });
+            document.addEventListener('touchend', function (e) {
+                document.getElementById("body").innerHTML += '<h1>터치 종료</h1>';
+            });
+        });
+    </script>
+</head>
+
+<body id="body">
+</body>
+
+</html>

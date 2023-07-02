@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>배열의 메소드</title>
+</head>
+<body>
+<script>
+	//배열 요소 모두 선언
+	var varArray = new Array("C&C++", "C#", "Java", "JavaScript", "Objective-C")
+	var addArray = ["Python", "R", "Swift"]
+	document.write("varArray : " + varArray + "<br/>")	// varArray 배열의 내용 출력 
+	document.write("varArray length : " + varArray.length+ "<br/>")	//varArray 길이 출력 : 9
+
+	//varArray 뒤에 addArray를 합친 결과를 반환
+	var concatArray = varArray.concat(addArray)	
+	//두 개의 배열이 합쳐진 concatArray의 길이 출력 : 13
+	document.write("concatArray length : " + concatArray.length)
+	//conc+ "<br/>"atArray 배열의 내용 출력 
+	document.write("concatArray : " + concatArray)+ "<br/>"
+	//concatArray 배열을 "-"로 연결한 String으로 반환 
+	document.write("concatArray join : " + concatArray.join(" - ")+ "<br/>")	
+	//concatArray 마지막 인자를 반환 : 12
+	document.write("concatArray pop : " + concatArray.pop()+ "<br/>")
+	//concatArray의 길이 출력 : 12
+	document.write("concatArray length : " + concatArray.length+ "<br/>")
+	//concatArray의 마지막에 "last"를 삽입하고 배열 크기 반환: 13
+	document.write("concatArray push : " + concatArray.push("last")+ "<br/>")
+	//concatArray의 첫번째 값을 제거하고 반환
+	document.write("concatArray shift : " + concatArray.shift()+ "<br/>")	
+	//concatArray의 길이 출력 : 12
+	document.write("concatArray length : " + concatArray.length+ "<br/>")	
+	//concatArray의 첫번째에 data 삽입 후 길이 반환 : 14
+	document.write("concatArray unshift : " + concatArray.unshift("first","second")+ "<br/>");	
+	//concatArray에서 "ab"의 첫번째 인덱스 반환 : 9
+	document.write("concatArray indexOf : " + concatArray.indexOf("ab")+ "<br/>")	
+	//concatArray에서 "ab"의 마지막 인덱스 반환 : 11
+	document.write("concatArray lastIndexOf : " + concatArray.lastIndexOf("ab")+ "<br/>")	
+	//concatArray의 배열 순서를 뒤집어서 반환
+	document.write("concatArray reverse : " + concatArray.reverse()+ "<br/>")
+	document.write("concatArray valueOf : " + concatArray.valueOf()+ "<br/>")
+	//concatArray의 9번 인덱스를 시작으로 끝까지 삭제하고 삭제한 값 반환
+	document.write("concatArray splice : " + concatArray.splice(9)+ "<br/>")
+	//concatArray의 3번쨰 인덱스부터 5번 인덱스 앞까지의 데이터 반환
+	document.write("concatArray slice : " + concatArray.slice(3,5)+ "<br/>")	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

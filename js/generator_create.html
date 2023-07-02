@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Generator</title>
+<script type="text/javascript">
+    //function * 함수
+    function* sports(one, two){
+    console.log("함수 블록");
+    yield one + two;
+    };
+    console.log(typeof sports);
+
+    var genObj = sports(1, 2);
+    console.log(typeof genObj);
+
+    //function * 표현식
+    var sports = function*(one, two){
+    console.log("함수 블록");
+    yield one + two;
+    };
+    genObj = sports(10, 20);
+    console.log(genObj.next());
+
+    //constructor 이용
+    GenConst = Object.getPrototypeOf(function*(){}).constructor;
+    var sports = new GenConst(
+    "one", "two",
+    "console.log('함수 블록'); yield one + two"
+    );
+    genObj = sports(3, 4);
+
+    console.log(genObj.next());
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 버블링</title>
+</head>
+<body>
+	<h1 id="header">
+		<span id="paragraph">Pagagraph</span>
+	</h1>
+</body>
+
+<script>
+	document.getElementById('header').addEventListener("click", function() {
+		alert('header');
+	});
+	document.getElementById('paragraph').addEventListener("click", function(e) {
+		var event = e || window.event;
+		alert('paragraph');
+
+		event.cancelBubble = true;
+		if (event.stopPropagation) {
+			event.stopPropagation();
+		}
+	});
+</script>
+</html>

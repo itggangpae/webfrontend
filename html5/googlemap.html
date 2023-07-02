@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>구글 맵 사용</title>
+<meta charset="UTF-8">
+</head>
+<body onload="startWatchPosition()">
+	<div id="map" style="width: 400px; height: 400px">지도 초기화</div>
+	<button onclick="startWatchPosition()" disabled>시작</button>
+	<button onclick="stopWatchPosition()" disabled>중지</button>
+</body>
+
+<script src="http://maps.googleapis.com/maps/api/js?v=3.3&sensor=false"></script>
+<script>
+	var map, watchId;
+	function startWatchPosition() {
+		watchId = navigator.geolocation.watchPosition(function(position) {
+			var coords = position.coords;
+			var mapCenter = new google.maps.LatLng(coords.latitude,
+					coords.longitude);
+			if (!map) {
+				map = new google.maps.Map(document.getElementById("map"), {
+					center : mapCenter,
+					mapTypeId : google.maps.MapTypeId.ROADMAP,
+					zoom : 15
+				});
+			}
+			var time = new Date();
+			time.setTime(position.timestamp);
+			var title = time.getHours() + ":" + time.getMinutes() + ":"
+					+ time.getSeconds();
+			var marker = new google.maps.Marker({
+				position : mapCenter,
+				title : title,
+				map : map
+			});
+			map.setCenter(mapCenter);
+		}, onPositionError, {
+			enableHighAccuracy : true
+		});
+		var buttons = document.getElementsByTagName("button");
+		buttons[0].disabled = true;
+		buttons[1].disabled = false;
+	}
+
+	function stopWatchPosition() {
+		navigator.geolocation.clearWatch(watchId);
+		var buttons = document.getElementsByTagName("button");
+		buttons[0].disabled = false, buttons[1].disabled = true;
+		alert("위치 정보 수집 종료");
+	}
+	
+	function onPositionError(error) {
+		alert("위치정보수집에러:" + error.message);
+	}
+
+	navigator.geolocation.getCurrentPosition(onSuccess, onError, {
+		maximumAge : 30000,
+		timeout : 0
+	});
+	function onError(error) {
+		if (error === error.TIMEOUT) {
+			alert("시간이 초과되었습니다..");
+		} else {
+			alert("기타 에러 발생");
+		}
+	}
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax weather</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <div id="page">
+    <h1>날씨 출력</h1>
+    <figure>
+      <div class="center">
+        <img class="icon" src="" alt="icon">
+        <p><i class="fas fa-spinner fa-spin"></i></p>
+        
+          <ul>
+            <li class="summary"></li>
+            <li class="temp"></li>
+            <li class="area"></li>
+            <li class="day"></li>
+            <li class="date">today</li>
+          </ul>
+        </div>
+
+    </figure>
+
+    <select name="area" id="area">
+      <option value="37.559326,126.97853337">위치 선택</option>
+      <option value="37.559326,126.97853337">서울</option>
+      <option value="37.456244,126.705916">인천</option>
+      <option value="36.350684,127.384727">대전</option>
+      <option value="35.871434,128.601675">대구</option>
+      <option value="35.179774,129.074976">부산</option>
+      <option value="33.499609,126.531265">제주도</option>
+    </select>
+
+  </div><!-- end page -->
+</body>
+</html>

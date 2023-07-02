@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>assign</title>
+<script type="text/javascript">
+    let sports = {
+        event: "축구",
+        player: 11
+    }
+    let dup = sports;
+
+    sports.player = 55;
+    console.log(dup.player);
+
+    dup.event = "농구";
+    console.log(sports.event);
+
+    dup = Object.assign({}, sports);
+
+    sports.player = 11;
+    console.log(dup.player);
+
+    dup.event = "축구";
+    console.log(sports.event);
+
+ </script>
+ </head>
+
+ <body>
+ </body>
+</html>

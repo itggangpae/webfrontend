@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>속성 설정</title>
+<script src="js/jquery.min.js"></script>
+<script>
+	function attr0() {
+		var src = $('#img1').attr("src");
+		alert(src);
+	}
+	function attr1() {
+		$('img').attr({
+			width : function(index) {
+				return (index + 1) * 100;
+			},
+			height : 100
+		});
+	}
+	function attr2() {
+		$('img').attr({
+			width : 200,
+			height : 100
+		});
+	}
+</script>
+</head>
+
+<body>
+	<img id="img1" src="resources/fruit1.jpg" />
+	<img id="img2" src="resources/fruit2.jpg" />
+	<img id="img3" src="resources/fruit3.jpg" />
+	<fieldset>
+		<legend> 클래스 작업 </legend>
+		<button onclick="attr0()">속성 가져오기</button>
+		<button onclick="attr1()">속성 추가1</button>
+		<button onclick="attr2()">속성 추가2</button>
+	</fieldset>
+</body>
+</html>
+	

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<title>폼 스타일</title>
+<style>
+ul {
+	list-style-type: none;
+}
+
+ul li {
+	clear: both;
+}
+
+form {
+	width: 50em;
+	border: 1px solid #666;
+	border-radius: 10px;
+	box-shadow: .2em .2em .5em #999;
+	background-color: #d0e9f6;
+	padding: 1em;
+	overflow: hidden;
+}
+
+label {
+	display: block;
+	float: left;
+	width: 10em;
+	text-align: right;
+	margin-right: .5em;
+	color: #04699d;
+}
+
+input.textinput {
+	width: 30em;
+	height: 2em;
+	border: 1px solid #666;
+	margin-bottom: 1em;
+	display: block;
+	float: left;
+}
+input.fileinput {
+	width: 15em;
+	height: 2em;
+	border: 1px solid #666;
+	margin-bottom: 1em;
+	margin-right: 1em;
+	display: block;
+	float: left;
+}
+
+img{
+	width: 7em;
+	height: 7em;
+	border: 1px solid #666;
+	margin-bottom: 1em;
+}
+
+textarea {
+	display: block;
+	width: 30em;
+	height: 5em;
+	border: 1px solid #666;
+	margin-bottom: 1em;
+	line-height: 1.25;
+	overflow: auto;
+	resize: none;
+}
+
+input.textinput, textarea {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: .875em;
+}
+
+input[type="submit"], input[type="button"] {
+	display: block;
+	width: 10em;
+	height: 2em;
+	float: left;
+	background: white;
+	font-size: inherit;
+	border: 1px solid #04699d;
+	border-radius: 4px;
+	box-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+	margin-top: 1em;
+	margin-right: 1em;
+	color: #C00;
+}
+
+input[type="submit"] {
+	margin-left: 5em;
+}
+
+#msg {
+	color: red;
+}
+
+@media screen and (max-width: 960px) {
+	form {
+		width: 20em;
+		border: 1px solid #666;
+		border-radius: 10px;
+		box-shadow: .2em .2em .5em #999;
+		background-color: #d0e9f6;
+		padding: 1em;
+		overflow: hidden;
+	}
+	label {
+		display: block;
+		float: left;
+		width: 4em;
+		text-align: right;
+		margin-right: .5em;
+		color: #04699d;
+	}
+	input.textinput {
+		width: 13em;
+		height: 2em;
+		border: 1px solid #666;
+		margin-bottom: 1em;
+	}
+	img{
+		width: 7em;
+		height: 7em;
+		border: 1px solid #666;
+		margin-bottom: 1em;
+		margin-left:5em;
+	}
+	textarea {
+		display: block;
+		width: 13em;
+		height: 5em;
+		border: 1px solid #666;
+		margin-bottom: 1em;
+		line-height: 1.25;
+		overflow: auto;
+		resize: none;
+	}
+	input.textinput, textarea {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-size: .875em;
+	}
+	input[type="submit"], input[type="button"] {
+		display: block;
+		width: 10em;
+		height: 2em;
+		float: left;
+		background: white;
+		font-size: inherit;
+		border: 1px solid #04699d;
+		border-radius: 4px;
+		box-shadow: 2px 2px 3px rgba(0, 0, 0, .5);
+		margin-top: 1em;
+		color: #C00;
+		margin-left: 3em;
+	}
+}
+</style>
+</head>
+<body>
+	<form method="post" action="server.jsp" id="registerform">
+		<h2>회원가입</h2>
+		<div align="center" id="msg"></div>
+		<ul>
+			<li>
+				<label for="email">이메일</label> 
+				<input type="text" id="email" name="email" class="textinput" placeholder="이메일 주소를 입력하세요" />
+			</li>
+			<li>
+				<label for="userpw">비밀번호</label> 
+				<input type="password" id="userpw" name="userpw" class="textinput" />
+			</li>
+			<li>
+				<label for="userpw1">비밀번호확인</label> 
+				<input type="password" id="userpw1" class="textinput" />
+			</li>
+
+			<li>
+				<label for="nickname">별명</label> 
+				<input type="text" id="nickname" class="textinput" />
+			</li>
+			<li>
+				<label for="myimage">이미지</label> 
+				<input type="file" id="myimage" class="fileinput" accept="image/*"/>
+				<img id="img" />
+			</li>
+
+
+			<li class="buttons">
+				<input type="submit" value="회원가입" /> 
+				<input type="button" value="메인" id="mainbtn" /> 
+				<input type="button" value="로그인" id="loginbtn" />
+			</li>
+		</ul>
+	</form>
+</body>
+
+<script>
+	var mainbtn = document.getElementById("mainbtn");
+	var loginbtn = document.getElementById("loginbtn");
+
+	var registerform = document.getElementById("registerform");
+
+	var email = document.getElementById("email");
+	var userpw = document.getElementById("userpw");
+	var userpw1 = document.getElementById("userpw1");
+	var nickname = document.getElementById("nickname");
+	var msg = document.getElementById("msg");
+
+	document.getElementById("myimage").addEventListener("change", function() {
+		readURL(this);
+	})
+
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var filename = input.files[0].name;
+
+			var reader = new FileReader();
+
+			reader.addEventListener("load", function(e) {
+				document.getElementById('img').src = e.target.result;
+			});
+
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+	mainbtn.addEventListener("click", function(event) {
+		location.href = "../index.html";
+	});
+
+	loginbtn.addEventListener("click", function(event) {
+		location.href = "login.html";
+	});
+
+	registerform.addEventListener("submit", function(event) {
+		msg.innerHTML = '';
+		var flag = false;
+		if (email.value.trim().length < 1) {
+			msg.innerHTML = '이메일은 필수 입력입니다.<br/>';
+			flag = true;
+		}else{
+			var emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+			if(!emailRegExp.test(email.value.trim())){
+				msg.innerHTML = '잘못된 이메일 형식입니다.<br/>';
+				flag = true;
+			}
+		}
+		if (userpw.value.trim().length < 1) {
+			msg.innerHTML += '비밀번호는 필수 입력입니다.<br/>';
+			flag = true;
+		}else{
+			var pwRegExp = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=]).*$/;
+			if(!pwRegExp.test(userpw.value.trim())){
+				msg.innerHTML = '비밀번호는 숫자와 영문 대소문자 그리고 특수문자가 포함되어야 합니다.<br/>';
+				flag = true;
+			}
+			else{
+				if(userpw.value.trim() !== userpw1.value.trim()){
+				msg.innerHTML += '2개의 비밀번호는 같아야 합니다.<br/>';
+				flag = true;
+				}
+			}
+		}
+		if (nickname.value.trim().length < 1) {
+			msg.innerHTML += '별명은 필수 입력입니다.<br/>';
+			flag = true;
+		}else{
+			var nicknameRegExp = /^[a-zA-z가-힣0-9]{2,5}$/;
+			if(!nicknameRegExp.test(nickname.value.trim())){
+				msg.innerHTML = '닉네임은 영문 한글 숫자로 2자 이상 5자 이하이어야 합니다.<br/>';
+				flag = true;
+			}
+		}
+		if(flag == true){
+			event.preventDefault();
+		}
+	});
+</script>
+</html>

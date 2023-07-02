@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>나의 객체 정렬</title>
+</head>
+
+<body></body>
+
+<script>
+	// 생성자 함수를 선언합니다.
+	function Girl(name, korean, math, english, science) {
+		// 속성
+		this.이름 = name;
+		this.국어 = korean;
+		this.수학 = math;
+		this.영어 = english;
+		this.과학 = science;
+		// 메소드
+		this.getSum = function() {
+			return this.국어 + this.수학 + this.영어 + this.과학;
+		};
+		this.getAverage = function() {
+			return this.getSum() / 4;
+		};
+		this.toString = function() {
+			return this.이름 + ':' + this.getSum() + ':' + this.getAverage();
+		};
+	}
+
+	// 학생 정보 배열을 만듭니다.
+	var girls = [];
+	girls.push(new Girl('제시카', 97, 98, 88, 95));
+	girls.push(new Girl('태연', 92, 98, 96, 98));
+	girls.push(new Girl('유리', 76, 96, 94, 90));
+	girls.push(new Girl('티파니', 98, 92, 96, 92));
+	girls.push(new Girl('서현', 45, 98, 98, 98));
+	girls.push(new Girl('윤아', 64, 88, 92, 92));
+	girls.push(new Girl('써니', 82, 86, 98, 88));
+	girls.push(new Girl('수영', 88, 74, 78, 92));
+	girls.push(new Girl('효연', 97, 92, 88, 95));
+	girls.sort(function(left, right) {
+		return right.getSum() - left.getSum();
+	});
+	girls = girls.slice(0, 3);
+	for ( var i in girls) {
+		document.write(girls[i].toString() + "<br/>");
+	}
+</script>
+</html>

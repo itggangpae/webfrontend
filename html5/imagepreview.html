@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>이미지 미리보기</title>
+</head>
+
+<body>
+	<h1>HTML5 File API</h1>
+	<input type="file" id="imgInp" accept=".png, .jpg, .jpeg, .gif" />
+	<!-- 위에서 선택한 파일이 이미지 일 때 미리보기 영역 -->
+	<img id="img" width="200" height="200" border="1" />
+</body>
+
+<script>
+	var imgInp = document.getElementById("imgInp")
+	var img = document.getElementById("img")
+
+	//파일의 선택이 변경될 때 수행할 내용
+	imgInp.addEventListener("change", function (e) {
+		//파일이 선택된 경우만 수행
+		if (imgInp.files && imgInp.files[0]) {
+			//파일이름 가져오기
+			var filename = imgInp.files[0].name
+
+			//.뒤의 문자열 가져오기
+			//split 메소드 이용
+			var ar = filename.split(".")
+			var ext = ar[ar.length - 1]
+
+			//그림 파일인지 확인 - 확장자:jpg, gif, png
+			if (ext.toLowerCase() != "jpg" &&
+				ext.toLowerCase() != "gif" &&
+				ext.toLowerCase() != "png") {
+
+				alert("그림 파일을 선택하세요 !!!!")
+				return
+			}
+
+			//파일의 내용을 읽기 위한 객체 만들기
+			var reader = new FileReader()
+			reader.readAsDataURL(imgInp.files[0])
+
+			//파일의 내용을 전부 읽으면
+			reader.addEventListener("load", function (e) {
+				img.src = reader.result;
+			})
+
+		}
+	});
+</script>
+
+</html>

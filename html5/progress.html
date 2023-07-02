@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>폼 요소</title>
+
+</head>
+
+<body>
+	<form>
+		<progress id="bar" value="0" max="100"> </progress>
+		<input type="button" value="시작" onclick="progress()">
+	</form>
+</body>
+<script>
+	function progress() {
+		var bar = document.getElementById("bar");
+		loaded = 0;
+		var timer = setInterval(function () {
+			loaded += 10;
+			bar.value = loaded;
+			if (loaded == 100)
+				clearInterval(timer);
+		}, 1000);
+	}
+</script>
+
+</html>

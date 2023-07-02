@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>change 이벤트</title>
+
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		$('#all_check').change(function() {
+			if (this.checked) {
+				$('input[name=sports]').each(function(){
+					this.checked=true;
+				});
+			} else {
+				$('input[name=sports]').each(function(){
+					this.checked=false;
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="checkbox" id="all_check" />
+	<label>All</label>
+	<div id="check_item">
+		<input type="checkbox" name="sports"/> <label>야구</label> 
+		<input type="checkbox" name="sports"/> <label>축구</label> 
+		<input type="checkbox" name="sports"/> <label>배구</label>
+	</div>
+</body>
+</html>

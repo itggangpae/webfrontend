@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>let&const</title>
+    <script>
+        /*
+        let 키워드로 book 변수를 선언하였으며 값을 할당하지 않았습니다.
+        변수에 값을 할당하지 않고 선언만 하면 디폴트(Default) 값으로 undefined가 할당됩니다. 
+        자바스크립트에서 undefined는 값
+    */
+        let book;
+
+        //let 키워드로 변수를 선언하고 초깃값으로 축구 를 할당한 형태
+        let sports = "축구";
+
+        //let 변수를 작성하지 않았지만 바로 위에 let 변수로 sports를 선언했으므로 sports 변수 값이 농구 로 대체
+        sports = "농구";
+
+        //let 키워드로 sports를 선언했는데 다시 let 키워드로 sports 변수를 선언하면 SyntaxError가 발생
+        //let sports = "배구";
+        //콤마(,)로 구분하여 여러 개의 let 변수를 연속해서 선언할 수 있습니다. 
+        //변수에 값을 할당 해도 되고 할당하지 않고 변수만 선언해도 됩니다.
+
+        let one = 1,
+            two = 2,
+            three;
+        //콤마로 구분하여 let 변수를 선언할 때 변수마다 let 키워드를 사용하면 SyntaxError가 발생
+        //let four = 4, let five = 5; 
+        //콤마로 구분하여 변수를 선언할 때 let과 var 키워드를 같이 사용할 수 없기 때문에 SyntaxError가 발생
+        //let six = 6, var seven = 7;
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

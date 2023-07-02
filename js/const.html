@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>let&const</title>
+    <script type="text/javascript">
+        const SPORTS = "축구";
+        try {
+            SPORTS = "농구";
+        } catch (e) {
+            console.log("const 재할당 불가");
+        }
+
+        const obj = {
+            language: "한글"
+        };
+        try {
+            obj = {};
+        } catch (e) {
+            console.log("const 재할당 불가");
+        }
+        obj.language = "영어";
+        console.log(obj.language);
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

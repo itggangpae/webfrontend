@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>위치 정보 사용</title>
+	<meta charset="UTF-8">
+	<script>
+		navigator.geolocation.watchPosition(onSuccess, onError, {
+			maximumAge: 5000,
+			enableHighAccuracy: true
+		});
+
+		function onSuccess(position) {
+			alert("위도: " + position.coords.latitude + "\n경도: " + position.coords.longitude +
+				"\n방향: " + position.coords.heading);
+		}
+
+		function onError(error) {
+			alert(error.message);
+		}
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

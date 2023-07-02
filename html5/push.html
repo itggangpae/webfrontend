@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="웹 푸시 시작" onclick="pushStart()">
+	<br /> 메시지:
+	<span id="disp"></span>
+</body>
+<script>
+	function pushStart() {
+		var eventSource = new EventSource("resource/push.jsp");
+		eventSource.onmessage = function(event) {
+			document.getElementById('disp').innerHTML = event.data;
+		};
+	}
+</script>
+</html>

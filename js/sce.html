@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>short-circuit evaluation</title>
+    <script>
+        const animal = {
+            name: 'Lion'
+        };
+
+        function getName(param) {
+            const name = param && param.name;
+            return name || '이름이 없는 동물입니다.';
+        }
+
+        const name = getName(animal);
+        console.log(name);
+
+        const irum = getName();
+        console.log(irum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

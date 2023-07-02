@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>그림자</title>
+</head>
+
+<body>
+	<canvas id="canvas" width="320" height="240" style="border: 1px black solid"> </canvas>
+</body>
+<script>
+	var canvas = document.getElementById("canvas");
+	var context = canvas.getContext("2d");
+	context.strokeStyle = "rgba(255,0,0,1)";
+	context.lineWidth = 10;
+	context.shadowColor = "rgba(0,0,255,0.5)";
+	context.shadowBlur = 15;
+	context.shadowOffsetX = 15;
+	context.shadowOffsetY = 15;
+
+	context.beginPath();
+	context.moveTo(50, 50);
+	context.lineTo(280, 80);
+	context.lineTo(100, 200);
+	context.closePath();
+	context.stroke();
+</script>
+
+</html>

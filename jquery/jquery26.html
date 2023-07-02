@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>애니메이션</title>
+<style type="text/css">
+h1 {
+	width: 50px;
+	height: 30px;
+	background-color: red;
+	font-size: 100%;
+}
+
+h2 {
+	width: 50px;
+	height: 30px;
+	background-color: orange;
+	font-size: 100%;
+}
+</style>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		$("h1").animate({ //<h1>에 애니메이션 적용 함.
+			marginLeft : "250px"
+		}, 3000);
+
+		$("h2").delay(1000).animate({ //<h2>에 모션이 1초 후에 실행됨.
+			marginLeft : "250px"
+		}, 3000);
+
+		$("#stopbtn").on("click", function() { //"stop"버튼을 클릭했을 때...
+			$("h1").stop(); //<h1>의 모션이 정지됩니다.
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="stobtn">stop</button>
+	<h1>내용</h1>
+	<h2>내용</h2>
+</body>
+</html>

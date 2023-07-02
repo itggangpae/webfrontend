@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<title>Video Player</title>
+	<style>
+		body {
+			text-align: center;
+		}
+
+		header,
+		section,
+		footer,
+		aside,
+		nav,
+		article,
+		figure,
+		figcaption,
+		hgroup {
+			display: block;
+		}
+
+		#player {
+			width: 720px;
+			margin: 20px auto;
+			padding: 5px;
+			background: #999999;
+			border: 1px solid #666666;
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+		}
+
+		nav {
+			margin: 5px 0px;
+		}
+
+		#buttons {
+			float: left;
+			width: 85px;
+			height: 20px;
+		}
+
+		#bar {
+			position: relative;
+			float: left;
+			width: 600px;
+			height: 16px;
+			padding: 2px;
+			border: 1px solid #CCCCCC;
+			background: #EEEEEE;
+		}
+
+		#progress {
+			position: absolute;
+			width: 0px;
+			height: 16px;
+			background: rgba(0, 0, 150, .2);
+		}
+	</style>
+	<script>
+		function initiate() {
+			maxim = 600;
+			mmedia = document.getElementById('media');
+			play = document.getElementById('play');
+			bar = document.getElementById('bar');
+			progress = document.getElementById('progress');
+
+			play.addEventListener('click', push, false);
+			bar.addEventListener('click', move, false);
+		}
+
+		function push() {
+			if (!mmedia.paused && !mmedia.ended) {
+				mmedia.pause();
+				play.innerHTML = 'Play';
+				window.clearInterval(loop);
+			} else {
+				mmedia.play();
+				play.innerHTML = 'Pause';
+				loop = setInterval(status, 1000);
+			}
+		}
+
+		function status() {
+			if (!mmedia.ended) {
+				var size = parseInt(mmedia.currentTime * maxim / mmedia.duration);
+				progress.style.width = size + 'px';
+			} else {
+				progress.style.width = '0px';
+				play.innerHTML = 'Play';
+				window.clearInterval(loop);
+			}
+		}
+
+		function move(e) {
+			if (!mmedia.paused && !mmedia.ended) {
+				var mouseX = e.pageX - bar.offsetLeft;
+				var newtime = mouseX * mmedia.duration / maxim;
+				mmedia.currentTime = newtime;
+				progress.style.width = mouseX + 'px';
+			}
+		}
+		window.addEventListener('load', initiate, false);
+	</script>
+</head>
+
+<body>
+	<section id="player">
+		<video id="media" width="720" height="400">
+			<source src="resource/Painting.mp4">
+			<source src="resource/IPhone3G.mov">
+		</video>
+		<nav>
+			<div id="buttons">
+				<button type="button" id="play">Play</button>
+			</div>
+			<div id="bar">
+				<div id="progress"></div>
+			</div>
+			<div style="clear: both"></div>
+		</nav>
+	</section>
+</body>
+
+</html>

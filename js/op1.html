@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>연산자 연습</title>
+	<script type="text/javascript">
+		let obj = {};
+
+		obj.x = 3;
+		console.log(obj.x); // 3 출력.
+		console.log(obj); // { x: 3 } 출력.
+
+		const key = 'y';
+		obj[key] = 5;
+		console.log(obj[key]); // 5 출력.
+		console.log(obj); // { x: 3, y: 5 } 출력
+
+		let val = 0;
+
+		console.log((val.x = 3)); // 3 출력.
+		console.log(val.x); // undefined 출력.
+		console.log(val); // 0 출력.
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

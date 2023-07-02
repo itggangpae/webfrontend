@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Drag and Drop</title>
+  <style>
+    #dropbox {
+      float: left;
+      width: 500px;
+      height: 300px;
+      margin: 10px;
+      border: 1px solid #999999;
+    }
+
+    #picturesbox {
+      float: left;
+      width: 320px;
+      margin: 10px;
+      border: 1px solid #999999;
+    }
+
+    #picturesbox>img {
+      float: left;
+      padding: 5px;
+    }
+  </style>
+  <script>
+    function initiate() {
+      source1 = document.getElementById('image');
+      source1.addEventListener('dragstart', dragged, false);
+
+      drop = document.getElementById('dropbox');
+      drop.addEventListener('dragenter', function (e) {
+        e.preventDefault();
+      }, false);
+      drop.addEventListener('dragover', function (e) {
+        e.preventDefault();
+      }, false);
+      drop.addEventListener('drop', dropped, false);
+    }
+
+    function dragged(e) {
+      var code = '<img src="' + source1.getAttribute('src') + '">';
+      e.dataTransfer.setData('Text', code);
+    }
+
+    function dropped(e) {
+      e.preventDefault();
+      drop.innerHTML = e.dataTransfer.getData('Text');
+    }
+    window.addEventListener('load', initiate, false);
+    
+  </script>
+</head>
+
+<body>
+  <section id="dropbox">
+    Drag and drop the image here
+  </section>
+  <section id="picturesbox">
+    <img id="image" src="images/network.png">
+  </section>
+</body>
+
+</html>

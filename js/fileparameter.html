@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>post parameter 전송</title>
+</head>
+<body>
+<form id="myform" method="POST" enctype="multipart/form-data">
+	<fieldset>
+		<legend>파일 업로드</legend>
+		이름<input type='text' name='writer' /><br/>
+		파일<input type="file" name="file" /><br/>
+	</fieldset>
+	<input type="button" value="전송" id="sendbtn" />
+</form>
+<script>
+	document.getElementById('sendbtn').addEventListener('click', function(){
+		var request = new XMLHttpRequest();
+		//form에 enctype이 설정되어 있어서 별도로 샐정하지 않아도 됨
+		var formdata = new FormData(document.getElementById('myform'));
+		for(attr in formdata){
+			console.log(attr);
+		}
+		//form 에 없는 경우 직접 추가
+		formdata.append("image", DOM객체.files[0]);
+
+		request.open('POST', "서버URL", true);
+		
+		request.send(formdata);
+		
+		request.addEventListener('load', function() {
+			alert(request.responseText);
+		});
+	});	
+</script>
+</body>
+</html>

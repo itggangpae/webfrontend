@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>한정자(플래그) 사용</title>
+</head>
+<body>
+</body>
+<script>
+	// 변수를 선언합니다.
+	var regExp = /r/ig;
+	var str = 'Javascript RegExp';
+	// 메소드를 사용
+	var output = str.replace(regExp, '+$&+');
+	// 출력       
+	alert(output);
+	regExp = /^j/igm;
+	str = 'Javascript\njQuery';
+	// 메소드를 사용
+	output = str.replace(regExp, '+$&+');
+	// 출력합니다.
+	alert(output);
+</script>
+</html>

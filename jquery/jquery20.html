@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>키보드 이벤트</title>
+
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		$('textarea').keydown(function() {
+			alert(event.which);
+			$('div').css('color', 'red');
+		});
+	});
+</script>
+</head>
+<body>
+	<div>키보드 이벤트</div>
+	<textarea cols='30' rows='3'> </textarea>
+</body>
+</html>

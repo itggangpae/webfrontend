@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Class</title>
+    <script type="text/javascript">
+        let Member = class {
+            setName(name) {
+                this.name = name;
+            }
+        };
+        Member.prototype.getName = function () {
+            return this.name;
+        }
+        let obj = new Member();
+        obj.setName('아담')
+        console.log(obj.getName());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

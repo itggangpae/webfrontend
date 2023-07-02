@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>폼 요소</title>
+</head>
+
+<body>
+	<form>
+		<p>
+			진행률:
+			<meter id="meter" min="0" max="100"></meter>
+		</p>
+		<input type="button" value="시작" onclick="progress()">
+	</form>
+</body>
+
+<script type="text/javascript">
+	function progress() {
+		var meter = document.getElementById("meter");
+		loaded = 0;
+		var timer = setInterval(function () {
+			loaded += 10;
+			meter.value = loaded;
+			if (loaded == 100)
+				clearInterval(timer);
+		}, 1000);
+	}
+</script>
+
+</html>

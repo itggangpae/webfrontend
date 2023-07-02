@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Company>
+	<data>
+	<CompanyLocation>강남</CompanyLocation>
+	<CompanyNumber>561-1911</CompanyNumber>
+	</data>
+	
+	<data>
+	<CompanyLocation>이대</CompanyLocation>
+	<CompanyNumber>313-1711</CompanyNumber>
+	</data>
+	
+	<data>
+	<CompanyLocation>종로</CompanyLocation>
+	<CompanyNumber>766-1811</CompanyNumber>
+	</data>
+</Company>

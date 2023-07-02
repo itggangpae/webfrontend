@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON 파싱</title>
+</head>
+<body>
+	<div id="content"></div>
+</body>
+<script>
+	var request = new XMLHttpRequest();
+	request.open('GET', 'data/data.json');
+	request.send('');
+
+	request.addEventListener('load', function() {
+		var text = request.responseText;
+		var data = JSON.parse(text);
+		const content = document.getElementById('content');
+		content.innerHTML = "<p>데이터 개수:" + data.count + "</p>";
+		for(var idx in data.groups){
+			content.innerHTML += "<p>그룹:" + data.groups[idx].name + "</p>";
+		}
+	});
+
+</script>
+</html>

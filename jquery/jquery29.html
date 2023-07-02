@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>파일 읽어오기</title>
+<script src="js/jquery.min.js"></script>
+<script>
+function loadFile() {
+	$.ajax({
+		url : 'resources/data.html',
+		dataType : "html",
+		success : function(data) {
+			$('#myDiv').html(data);
+		}
+	});
+	return false;
+}
+</script>
+</head>
+<body>
+
+	<div id="myDiv"></div>
+	<button type="button" onclick="loadFile()">파일 읽기</button>
+	<div id="myDiv1"></div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<title>클릭이벤트</title>
+
+</head>
+<body>
+	<a href="#" id="btn">여기를 클릭</a>
+</body>
+<script>
+	var test = (e)  => {
+		var event = e || window.event;
+		var x = event.screenX;
+		var y = event.screenY;
+		alert("X 좌표:" + x + " Y 좌표:" + y);
+	}
+	document.getElementById("btn").addEventListener("click", test);
+</script>
+</html>
