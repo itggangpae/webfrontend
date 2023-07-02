@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>가변인자 함수</title>
+	<script type="text/javascript">
+		function add() {
+			let sum = 0;
+			for (let i = arguments[0]; i <= arguments[1]; i++)
+				sum += i;
+			return sum;
+		}
+		let start = 1;
+		let end = 100;
+		document.write("합 = " + add(start, end) + "<br\>");
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>
