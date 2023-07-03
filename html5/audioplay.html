@@ -12,9 +12,9 @@
 </body>
 
 <script>
-	var audio = new Audio("resource/sound.mp3");
+	let audio = new Audio("resource/sound.mp3");
 	audio.addEventListener("timeupdate", function () {
-		var timeDisplay = document.getElementById("time");
+		let timeDisplay = document.getElementById("time");
 		timeDisplay.innerHTML = Math.floor(audio.currentTime) + "/" +
 			Math.floor(audio.duration) + ""
 	}, false);

@@ -25,9 +25,11 @@
     }
   </style>
   <script>
+    let source;
+    let drop;
     function initiate() {
-      source1 = document.getElementById('image');
-      source1.addEventListener('dragstart', dragged, false);
+      source = document.getElementById('image');
+      source.addEventListener('dragstart', dragged, false);
 
       drop = document.getElementById('dropbox');
       drop.addEventListener('dragenter', function (e) {
@@ -40,7 +42,7 @@
     }
 
     function dragged(e) {
-      var code = '<img src="' + source1.getAttribute('src') + '">';
+      let code = '<img src="' + source.getAttribute('src') + '">';
       e.dataTransfer.setData('Text', code);
     }
 
@@ -49,7 +51,7 @@
       drop.innerHTML = e.dataTransfer.getData('Text');
     }
     window.addEventListener('load', initiate, false);
-    
+
   </script>
 </head>
 

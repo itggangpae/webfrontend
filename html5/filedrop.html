@@ -25,6 +25,7 @@
     }
   </style>
   <script>
+    let drop;
     function initiate() {
       drop = document.getElementById('dropbox');
       drop.addEventListener('dragenter', function (e) {
@@ -38,8 +39,8 @@
 
     function dropped(e) {
       e.preventDefault();
-      var files = e.dataTransfer.files;
-      var list = '';
+      let files = e.dataTransfer.files;
+      let list = '';
       for (var f = 0; f < files.length; f++) {
         list += 'File: ' + files[f].name + ' ' + files[f].size + '<br>';
       }

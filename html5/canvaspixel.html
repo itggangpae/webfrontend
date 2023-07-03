@@ -12,24 +12,24 @@
 
 <script>
 	function init() {
-		var canvas = document.getElementById("canvas");
+		let canvas = document.getElementById("canvas");
 		if (canvas.getContext) {
-			var canvas = document.getElementById("canvas");
 			if (canvas.getContext) {
-				var ctx = canvas.getContext("2d");
-			}
-			ctx.fillStyle = "rgb(0,0,255)";
-			ctx.fillRect(10, 10, 20, 20);
-			var Pixel = ctx.getImageData(29, 10, 2, 1);
-			alert("픽셀 1: " + Pixel.data[0] + ", " + Pixel.data[1] + ", " +
-				Pixel.data[2] + ", " + Pixel.data[3]);
-			alert("픽셀 2: " + Pixel.data[4] + ", " + Pixel.data[5] + ", " +
-				Pixel.data[6] + ", " + Pixel.data[7]);
+				let ctx = canvas.getContext("2d");
 
-			alert("픽셀 너비: " + Pixel.width);
-			alert("픽셀 높이: " + Pixel.height);
-			Pixel = ctx.getImageData(10, 10, 20, 20);
-			ctx.putImageData(Pixel, 30, 30);
+				ctx.fillStyle = "rgb(0,0,255)";
+				ctx.fillRect(10, 10, 20, 20);
+				var Pixel = ctx.getImageData(29, 10, 2, 1);
+				alert("픽셀 1: " + Pixel.data[0] + ", " + Pixel.data[1] + ", " +
+					Pixel.data[2] + ", " + Pixel.data[3]);
+				alert("픽셀 2: " + Pixel.data[4] + ", " + Pixel.data[5] + ", " +
+					Pixel.data[6] + ", " + Pixel.data[7]);
+
+				alert("픽셀 너비: " + Pixel.width);
+				alert("픽셀 높이: " + Pixel.height);
+				Pixel = ctx.getImageData(10, 10, 20, 20);
+				ctx.putImageData(Pixel, 30, 30);
+			}
 		}
 	}
 </script>

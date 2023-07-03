@@ -15,12 +15,12 @@
 </body>
 
 <script>
-	var idsave = document.getElementById("idsave");
-	var ids = document.getElementById("id");
+	let idsave = document.getElementById("idsave");
+	let ids = document.getElementById("id");
 
 	//윈도우가 로드를 끝냈을 때
 	window.addEventListener("load", function (e) {
-		var event = e || window.event
+		let event = e || window.event
 		if (typeof localStorage.ids != 'undefined') {
 			ids.value = localStorage.ids;
 			idsave.checked = true;
@@ -30,7 +30,7 @@
 	document.getElementById("loginform").addEventListener(
 		"submit",
 		function (e) {
-			var event = e || window.event
+			let event = e || window.event
 			//체크박스의 값 확인
 			if (idsave.checked == true) {
 				//아이디에 입력된 값 저장

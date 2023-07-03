@@ -84,7 +84,7 @@
 
 		function status() {
 			if (!mmedia.ended) {
-				var size = parseInt(mmedia.currentTime * maxim / mmedia.duration);
+				let size = parseInt(mmedia.currentTime * maxim / mmedia.duration);
 				progress.style.width = size + 'px';
 			} else {
 				progress.style.width = '0px';
@@ -95,8 +95,8 @@
 
 		function move(e) {
 			if (!mmedia.paused && !mmedia.ended) {
-				var mouseX = e.pageX - bar.offsetLeft;
-				var newtime = mouseX * mmedia.duration / maxim;
+				let mouseX = e.pageX - bar.offsetLeft;
+				let newtime = mouseX * mmedia.duration / maxim;
 				mmedia.currentTime = newtime;
 				progress.style.width = mouseX + 'px';
 			}

@@ -11,7 +11,7 @@
 </body>
 <script>
 	function pushStart() {
-		var eventSource = new EventSource("resource/push.jsp");
+		let eventSource = new EventSource("resource/push.jsp");
 		eventSource.onmessage = function(event) {
 			document.getElementById('disp').innerHTML = event.data;
 		};

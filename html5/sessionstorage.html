@@ -23,17 +23,18 @@
 	</fieldset>
 </body>
 <script>
+	let key, value, list;
 	function init() {
-		var key = document.getElementById("key");
-		var value = document.getElementById("value");
-		var list = document.getElementById("list");
+		key = document.getElementById("key");
+		value = document.getElementById("value");
+		list = document.getElementById("list");
 		showData();
 	}
 
 	function showData() {
 		list.innerHTML = "";
-		for (var i = 0; i < sessionStorage.length; i++) {
-			var temp = sessionStorage.key(i);
+		for (let i = 0; i < sessionStorage.length; i++) {
+			let temp = sessionStorage.key(i);
 			list.options[list.options.length] =
 				new Option(temp + ":" + sessionStorage[temp], temp);
 		}
@@ -50,7 +51,7 @@
 	}
 
 	function onListSelected() {
-		var selectData = list.options[list.selectedIndex];
+		let selectData = list.options[list.selectedIndex];
 		key.value = selectData.value;
 		value.value = sessionStorage[selectData.value];
 	}

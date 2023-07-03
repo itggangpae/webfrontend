@@ -15,7 +15,7 @@
 
 </body>
 <script>
-	var webSocket = new WebSocket('ws://172.30.67.250:9000/Communications/chat');
+	let webSocket = new WebSocket('ws://172.30.67.250:9000/Communications/chat');
 	webSocket.onerror = function(event) {
 		onError(event)
 	};
@@ -26,7 +26,7 @@
 		onMessage(event)
 	};
 
-	var disp = document.getElementById("disp");
+	let disp = document.getElementById("disp");
 	function onMessage(event) {
 		disp.value = event.data + "\n" + disp.value;
 	}

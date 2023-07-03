@@ -26,16 +26,16 @@
 
 <script>
 	function readFile() {
-		var file = document.getElementById("file").files[0];
+		let file = document.getElementById("file").files[0];
 
 		document.getElementById("fileName").textContent = file.name;
 		document.getElementById("fileSize").textContent = "(" + file.size +
 			"byte)";
 
-		var reader = new FileReader();
+		let reader = new FileReader();
 
 		reader.onload = function () {
-			var display = document.getElementById("content");
+			let display = document.getElementById("content");
 			display.textContent = reader.result;
 		};
 
@@ -43,8 +43,8 @@
 			alert(evt.target.error.code);
 		};
 
-		var encodingList = document.getElementById("encoding");
-		var encoding = encodingList.options[encodingList.selectedIndex].value;
+		let encodingList = document.getElementById("encoding");
+		let encoding = encodingList.options[encodingList.selectedIndex].value;
 
 		reader.readAsText(file, encoding);
 

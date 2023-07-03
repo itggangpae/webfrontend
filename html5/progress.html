@@ -15,9 +15,9 @@
 </body>
 <script>
 	function progress() {
-		var bar = document.getElementById("bar");
+		let bar = document.getElementById("bar");
 		loaded = 0;
-		var timer = setInterval(function () {
+		let timer = setInterval(function () {
 			loaded += 10;
 			bar.value = loaded;
 			if (loaded == 100)

@@ -13,13 +13,13 @@
 
 <script>
 	/*
-	var canvas =
+	let canvas =
 		document.getElementById("canvas")
 	//컨텍스트 변수 만들기
-	var context = canvas.getContext("2d")
+	let context = canvas.getContext("2d")
 
 	//출력할 이미지 객체 만들기
-	var image = new Image()
+	let image = new Image()
 	image.src = "http://cfile202.uf.daum.net/image/1960C644501781AD20E86B"
 
 
@@ -32,13 +32,13 @@
 
 	
 	//이미지 스프라이트와 타이머
-	var canvas = 
+	let canvas = 
 		document.getElementById("canvas")
 	//컨텍스트 변수 만들기
-	var context = canvas.getContext("2d")
+	let context = canvas.getContext("2d")
 	
 	//출력할 이미지 객체 만들기
-	var image = new Image()
+	let image = new Image()
 	image.src="images/img.jpg"
 	
 	
@@ -46,8 +46,8 @@
 	image.addEventListener("load", function(){
 		setInterval(func,3000);
 	})
-	var idx = 0
-	var func = function(){
+	let idx = 0
+	let func = function(){
 		context.drawImage(image, 
 				133 * Math.floor(idx/3), 
 				133 * Math.floor(idx%3),

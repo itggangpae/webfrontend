@@ -15,16 +15,16 @@
 </body>
 
 <script>
-  var canvas = document.getElementById('canvas');
-  var context = canvas.getContext('2d');
+  let canvas = document.getElementById('canvas');
+  let context = canvas.getContext('2d');
 
-  var img = new Image();
+  let img = new Image();
   img.src = "images/bricks.jpg";
   img.addEventListener("load", modimage, false);
 
   function modimage(e) {
     img = e.target;
-    var pattern = context.createPattern(img, 'repeat');
+    let pattern = context.createPattern(img, 'repeat');
     context.fillStyle = pattern;
     context.fillRect(0, 0, 2038, 1014);
   }

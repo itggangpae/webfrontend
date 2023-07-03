@@ -21,7 +21,7 @@
 </body>
 
 <script>
-	var db;
+	let db;
 
 	function init() {
 		db = window.openDatabase("AddressBook", "1", "AddressBookDB",
@@ -37,13 +37,13 @@
 	function showData() {
 		db.transaction(function (tx) {
 			tx.executeSql("select * from AddressBook", [], function (tx, rs) {
-				var list = document.getElementById("list");
+				let list = document.getElementById("list");
 				list.innerHTML = "";
-				var rows = rs.rows;
+				let rows = rs.rows;
 
-				for (var i = 0; i < rows.length; i++) {
-					var row = rows.item(i);
-					var option = new Option(row.num + "\t" + row.name + "\t" +
+				for (let i = 0; i < rows.length; i++) {
+					let row = rows.item(i);
+					let option = new Option(row.num + "\t" + row.name + "\t" +
 						row.age + "\t" + row.address, row.num);
 					list.options[list.options.length] = option;
 				}
@@ -52,9 +52,9 @@
 	}
 
 	function addData() {
-		var name = document.getElementById("name").value;
-		var age = document.getElementById("age").value;
-		var address = document.getElementById("address").value;
+		let name = document.getElementById("name").value;
+		let age = document.getElementById("age").value;
+		let address = document.getElementById("address").value;
 		db
 			.transaction(function (tx) {
 				tx
@@ -69,11 +69,11 @@
 	}
 
 	function removeData() {
-		var list = document.getElementById("list");
+		let list = document.getElementById("list");
 		if (list.selectedIndex < 0) {
 			return;
 		}
-		var selected = list.options[list.selectedIndex].value;
+		let selected = list.options[list.selectedIndex].value;
 		db.transaction(function (tx) {
 			tx.executeSql("delete from AddressBook where num=?", [selected],
 				function () {
